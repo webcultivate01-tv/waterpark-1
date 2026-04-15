@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pawna Lake Camping – Adventure & Relaxation Near Lonavala</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Merriweather:ital,wght@0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<title>AquaRush Waterpark – Fun & Adventure Near Lonavala</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Merriweather:ital,wght@0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root {
@@ -427,17 +427,25 @@ section{padding:5rem 4%;}
   background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
     url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1400&q=80') center/cover no-repeat;
   padding:5rem 4%;
+  overflow:hidden;
 }
 .testimonials-bg .section-tag{color:#FFE082;text-align:center;display:block;}
 .testimonials-bg .section-title{color:white;text-align:center;margin-bottom:0;}
-.reviews-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1.5rem;max-width:1100px;margin:2.5rem auto 0;
+
+/* SLIDER */
+.reviews-slider-wrap{
+  position:relative;max-width:1100px;margin:2.5rem auto 0;
+}
+.reviews-track{
+  display:flex;gap:1.5rem;
+  transition:transform 0.5s cubic-bezier(.4,0,.2,1);
+  will-change:transform;
 }
 .review-card{
   background:white;border-radius:var(--radius);
   padding:1.75rem;position:relative;
-  transition:transform 0.3s;
+  flex:0 0 calc(33.333% - 1rem);
+  min-width:0;box-sizing:border-box;
 }
 .review-card:hover{transform:translateY(-5px);}
 .stars{color:var(--orange);font-size:0.95rem;margin-bottom:1rem;letter-spacing:2px;}
@@ -456,6 +464,29 @@ section{padding:5rem 4%;}
 .quote-mark{
   position:absolute;right:1.5rem;bottom:1.25rem;
   font-size:3rem;color:var(--green-pale);font-family:'Merriweather',serif;line-height:1;
+}
+/* slider nav */
+.slider-nav{
+  display:flex;align-items:center;justify-content:center;
+  gap:1rem;margin-top:2rem;
+}
+.slider-btn{
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.4);
+  color:#fff;font-size:1rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.2s;backdrop-filter:blur(6px);
+}
+.slider-btn:hover{background:var(--orange);border-color:var(--orange);}
+.slider-dots{display:flex;gap:8px;align-items:center;}
+.slider-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:rgba(255,255,255,0.35);cursor:pointer;
+  transition:all 0.3s;border:none;padding:0;
+}
+.slider-dot.active{background:#fff;width:24px;border-radius:4px;}
+@media(max-width:700px){
+  .review-card{flex:0 0 calc(100% - 0px);}
 }
 
 /* ===== FAQ ===== */
@@ -720,8 +751,8 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   <div class="nav-logo">
     <div class="nav-logo-icon">PL</div>
     <div class="nav-logo-text">
-      <div class="nav-logo-title">Pawna Lake Camping</div>
-      <div class="nav-logo-sub">Near Lonavala</div>
+      <div class="nav-logo-title">AquaRush Waterpark</div>
+      <div class="nav-logo-sub">Fun & Adventure Near Lonavala</div>
     </div>
   </div>
   <ul class="nav-links">
@@ -748,17 +779,17 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 <!-- HERO -->
 <section id="hero" class="hero">
   <div class="hero-content">
-    <div class="hero-eyebrow"><i class="fa-solid fa-location-dot"></i> &nbsp;Pawna Dam · Near Lonavala</div>
-    <h1>Experience<br>Nature at<br><span>Pawna Lake</span><br>Camping</h1>
-    <p>Enjoy a memorable lakeside camping experience with bonfire, music, BBQ, and stargazing under the open sky. Perfect weekend getaway near Lonavala, Pune & Mumbai.</p>
+    <div class="hero-eyebrow"><i class="fa-solid fa-location-dot"></i> Pawna Dam &nbsp;&middot;&nbsp; Near Lonavala</div>
+    <h1>Dive Into<br><span>Endless Fun</span><br>at AquaRush<br><em>Waterpark</em></h1>
+    <p>Thrilling water slides, wave pools, lazy rivers & non-stop fun for the whole family. The ultimate waterpark experience near Lonavala, Pune & Mumbai.</p>
     <div class="hero-btns">
-      <a href="#booking" class="btn-orange"><i class="fa-solid fa-calendar-check"></i> Book Now</a>
-      <a href="#services" class="btn-outline-white"><i class="fa-solid fa-tent"></i> Our Packages</a>
+      <a href="#booking" class="btn-orange"><i class="fa-solid fa-ticket"></i> Book Tickets</a>
+      <a href="#services" class="btn-outline-white"><i class="fa-solid fa-water"></i> View Packages</a>
     </div>
     <div class="hero-badges">
-      <div class="hero-badge-item"><i class="fa-solid fa-star"></i> 4.9 Rated</div>
-      <div class="hero-badge-item"><i class="fa-solid fa-users"></i> 14K+ Guests</div>
-      <div class="hero-badge-item"><i class="fa-solid fa-shield-halved"></i> Safe & Secure</div>
+      <div class="hero-badge-item"><i class="fa-solid fa-star"></i><strong>4.9</strong><span>Rating</span></div>
+      <div class="hero-badge-item"><i class="fa-solid fa-users"></i><strong>14K+</strong><span>Visitors</span></div>
+      <div class="hero-badge-item"><i class="fa-solid fa-water"></i><strong>20+</strong><span>Water Rides</span></div>
     </div>
   </div>
 
@@ -771,7 +802,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 </section>
 <div style="padding:0 4%;margin-top:-120px;position:relative;z-index:10;">
 <div id="booking" class="booking-strip">
-  <h2>Booking Now !</h2>
+  <h2>Book Your Waterpark Visit!</h2>
   <div class="booking-form">
     <div class="form-field">
       <input type="text" placeholder="Enter Full Name">
@@ -782,10 +813,10 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
     <div class="form-field">
       <select>
         <option value="">Select Package</option>
-        <option>Tent Camping – ₹999</option>
-        <option>Standard Triangle – ₹1499</option>
-        <option>Cabin Cottage – ₹1699</option>
-        <option>Cozy Cottage – ₹2499</option>
+        <option>Day Pass – ₹999</option>
+        <option>Family Pack (4) – ₹3499</option>
+        <option>Premium Pass – ₹1499</option>
+        <option>Group Pass (10+) – ₹8999</option>
       </select>
     </div>
     <div class="form-field">
@@ -805,18 +836,18 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
     </div>
     <div class="about-text">
       <div class="section-tag">About Us</div>
-      <h2 class="section-title">Welcome to Pawna Lake Camping</h2>
-      <p class="section-sub">Welcome to <strong>Pawna Lake Camping near Lonavala</strong>, your perfect destination for a peaceful yet adventurous lakeside escape. We offer a variety of stays including <strong>Tent Camping, Standard Triangle tents, Cozy Cottages, and Cabin Cottages</strong>, ensuring the best comfort and unique experiences for every traveler.</p>
-      <p class="section-sub" style="margin-top:1rem;">Nestled amidst the Sahyadri hills, our campsite is ideal for families, couples, and groups searching for the <strong>best camping at Pawna Lake</strong> with breathtaking lake views and serene surroundings.</p>
+      <h2 class="section-title">Welcome to AquaRush Waterpark</h2>
+      <p class="section-sub">Welcome to <strong>Pawna Lake Waterpark near Lonavala</strong>, Maharashtra's most exciting water adventure destination. We offer thrilling water slides, wave pools, lazy rivers, kids' zones, and much more for an unforgettable day out.</p>
+      <p class="section-sub" style="margin-top:1rem;">Located amidst the scenic Sahyadri hills, our waterpark is perfect for families, friends, and corporate groups looking for the <strong>best waterpark experience near Pune and Mumbai</strong>.</p>
       <ul class="about-checks">
-        <li>Stunning Lake Views</li>
-        <li>All Meals Included</li>
-        <li>Bonfire Every Night</li>
-        <li>DJ & Live Music</li>
-        <li>Sports & Activities</li>
-        <li>Photography Service</li>
-        <li>24/7 Support</li>
-        <li>Safe & Family-Friendly</li>
+        <li>20+ Water Rides</li>
+        <li>Wave Pool</li>
+        <li>Kids Zone</li>
+        <li>Lazy River</li>
+        <li>Food Court</li>
+        <li>Changing Rooms</li>
+        <li>24/7 Security</li>
+        <li>Family-Friendly</li>
       </ul>
     </div>
   </div>
@@ -824,7 +855,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 
 <!-- SERVICES -->
 <section id="services" class="services-section">
-  <h2 class="services-main-title">Delivering World-Class Services</h2>
+  <h2 class="services-main-title">Our Waterpark Packages</h2>
   <div class="services-grid">
 
     <div class="svc-card2">
@@ -832,9 +863,9 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
         <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=700&q=80" alt="Tent Camping">
       </div>
       <div class="svc-body2">
-        <h3>Tent Camping</h3>
-        <p>Tent stay, Food, Starters, Activities, Lake view, Speaker, Garden.</p>
-        <div class="svc-price2"><span class="svc-rupee">₹</span><span class="svc-amt2">999/-</span><span class="svc-per2">Per person with food</span></div>
+        <h3>Day Pass</h3>
+        <p>Full day access to all water rides, wave pool, lazy river & kids zone.</p>
+        <div class="svc-price2"><span class="svc-rupee">₹</span><span class="svc-amt2">999/-</span><span class="svc-per2">Per person</span></div>
         <a href="#booking" class="btn-svc2"><i class="fa-solid fa-calendar-check"></i> BOOK NOW</a>
       </div>
     </div>
@@ -844,9 +875,9 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
         <img src="https://images.unsplash.com/photo-1478827387698-1527781a4887?w=700&q=80" alt="Standard Triangle">
       </div>
       <div class="svc-body2">
-        <h3>Standard Triangle</h3>
-        <p>Stay, Food, Starters, Activities, Fan, Charging, Garden view, Common Toilets.</p>
-        <div class="svc-price2"><span class="svc-rupee">₹</span><span class="svc-amt2">1499/-</span><span class="svc-per2">Per person with food</span></div>
+        <h3>Premium Pass</h3>
+        <p>All rides + Fast track entry, locker, towel & welcome drink included.</p>
+        <div class="svc-price2"><span class="svc-rupee">₹</span><span class="svc-amt2">1499/-</span><span class="svc-per2">Per person</span></div>
         <a href="#booking" class="btn-svc2"><i class="fa-solid fa-calendar-check"></i> BOOK NOW</a>
       </div>
     </div>
@@ -856,9 +887,9 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
         <img src="https://images.unsplash.com/photo-1613559806989-09f3be78e3dd?w=700&q=80" alt="Cabin Cottage">
       </div>
       <div class="svc-body2">
-        <h3>Cabin Cottage</h3>
-        <p>Mattress, Fan, Food, Starters, Activities, Lakeview, Speaker, Charging, Garden.</p>
-        <div class="svc-price2"><span class="svc-rupee">₹</span><span class="svc-amt2">1699/-</span><span class="svc-per2">Per person with food</span></div>
+        <h3>Family Pack</h3>
+        <p>2 Adults + 2 Kids, full day access, food vouchers & priority entry.</p>
+        <div class="svc-price2"><span class="svc-rupee">₹</span><span class="svc-amt2">3499/-</span><span class="svc-per2">Per family</span></div>
         <a href="#booking" class="btn-svc2"><i class="fa-solid fa-calendar-check"></i> BOOK NOW</a>
       </div>
     </div>
@@ -868,9 +899,9 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
         <img src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?w=700&q=80" alt="Cozy Cottage">
       </div>
       <div class="svc-body2">
-        <h3>Cozy Cottage</h3>
-        <p>Attached Washroom, Food, Starters, Activities, Lakeview, Speaker, Garden.</p>
-        <div class="svc-price2"><span class="svc-rupee">₹</span><span class="svc-amt2">2499/-</span><span class="svc-per2">Per person with food</span></div>
+        <h3>Group Pass</h3>
+        <p>10+ people, all rides, dedicated guide, group photo & special discounts.</p>
+        <div class="svc-price2"><span class="svc-rupee">₹</span><span class="svc-amt2">8999/-</span><span class="svc-per2">Per group (10+)</span></div>
         <a href="#booking" class="btn-svc2"><i class="fa-solid fa-calendar-check"></i> BOOK NOW</a>
       </div>
     </div>
@@ -880,11 +911,13 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 
 <!-- SCHEDULE -->
 <div class="schedule-bg">
-  <div style="text-align:center;margin-bottom:0.5rem;">
-    <div class="section-tag">Schedule</div>
-    <h2 class="section-title">Your Day at Pawna Lake</h2>
+  <div style="text-align:center;">
+    <h2 class="schedule-title-main">Pawna Lake Camping</h2>
+    <span class="schedule-title-sub">Schedule</span>
   </div>
+
   <div class="schedule-timeline">
+    <!-- TOP ROW -->
     <div class="sched-track">
       <div class="sched-item">
         <div class="sched-icon"><img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=150&q=80" alt="Tent"></div>
@@ -918,48 +951,49 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
       </div>
     </div>
 
-    <!-- Bottom row -->
-    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:2rem;">
-      <div class="sched-item" style="flex:1;min-width:120px;">
-        <div class="sched-icon"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=150&q=80" alt="Snacks"></div>
+    <!-- Check-in / Checkout -->
+    <div class="sched-ends">
+      <span><i class="fa-solid fa-location-dot" style="color:#E53935;"></i> Check-in: 4PM</span>
+      <span><i class="fa-solid fa-location-dot" style="color:#E53935;"></i> Checkout: 11PM</span>
+    </div>
+
+    <!-- BOTTOM ROW -->
+    <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:2rem;">
+      <div class="sched-item">
+        <div class="sched-icon"><img src="https://img.icons8.com/color/96/tea.png" alt="Snacks"></div>
         <div class="sched-label orange">Snacks</div>
         <div class="sched-time">5–6 pm</div>
       </div>
-      <div class="sched-item" style="flex:1;min-width:120px;">
-        <div class="sched-icon"><img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=150&q=80" alt="Sports"></div>
+      <div class="sched-item">
+        <div class="sched-icon"><img src="https://img.icons8.com/color/96/sports.png" alt="Sports"></div>
         <div class="sched-label teal">Sports Activities</div>
         <div class="sched-time">• • •</div>
       </div>
-      <div class="sched-item" style="flex:1;min-width:120px;">
-        <div class="sched-icon"><img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=150&q=80" alt="Music"></div>
+      <div class="sched-item">
+        <div class="sched-icon"><img src="https://img.icons8.com/color/96/dj.png" alt="Music"></div>
         <div class="sched-label purple">Music</div>
         <div class="sched-time">6–10 pm</div>
       </div>
-      <div class="sched-item" style="flex:1;min-width:120px;">
-        <div class="sched-icon"><img src="https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=150&q=80" alt="Campfire"></div>
+      <div class="sched-item">
+        <div class="sched-icon"><img src="https://img.icons8.com/color/96/bonfire.png" alt="Campfire"></div>
         <div class="sched-label red">Warmy Campfire</div>
         <div class="sched-time">10:30 pm</div>
       </div>
-      <div class="sched-item" style="flex:1;min-width:120px;">
-        <div class="sched-icon"><img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=150&q=80" alt="Breakfast"></div>
+      <div class="sched-item">
+        <div class="sched-icon"><img src="https://img.icons8.com/color/96/breakfast.png" alt="Breakfast"></div>
         <div class="sched-label">Breakfast</div>
         <div class="sched-time">8:30 am</div>
       </div>
     </div>
-
-    <div class="sched-ends">
-      <span><i class="fa-solid fa-location-dot"></i> Check-in: 4PM</span>
-      <span><i class="fa-solid fa-location-dot"></i> Checkout: 11PM</span>
-    </div>
   </div>
 
-  <!-- STATS BAR overlapping bottom of schedule -->
-  <div style="padding:0 5%;position:relative;z-index:10;margin-top:0;transform:translateY(65%);">
+  <!-- STATS BAR -->
+  <div style="padding:0 5%;position:relative;z-index:10;transform:translateY(80%);">
     <div class="stats-bar">
-      <div class="stat"><span class="stat-num">14K+</span><span class="stat-label">Happy Guests</span></div>
-      <div class="stat"><span class="stat-num">25+</span><span class="stat-label">Camp Locations</span></div>
-      <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Activities</span></div>
-      <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Years Experience</span></div>
+      <div class="stat"><span class="stat-num">14K+</span><span class="stat-label">Happy Visitors</span></div>
+      <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Water Rides</span></div>
+      <div class="stat"><span class="stat-num">5</span><span class="stat-label">Pools & Zones</span></div>
+      <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Years of Fun</span></div>
     </div>
   </div>
 </div>
@@ -1079,7 +1113,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 </div>
 
 <!-- FAQ -->
-<section id="faq" class="faq-bg">
+<section id="faq" class="faq-bg" style="padding-top:12rem;">
   <div style="text-align:center;margin-bottom:0.5rem;">
     <p style="font-size:1rem;color:var(--text-muted);font-weight:600;margin-bottom:0.3rem;">Need more help?</p>
     <div class="section-tag">Common Questions</div>
@@ -1133,33 +1167,61 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 <div class="testimonials-bg">
   <div class="section-tag">Testimonial</div>
   <h2 class="section-title">What they say about us</h2>
-  <div class="reviews-grid" data-aos="fade-up">
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">One of the best camping experiences I've had. The tents were cozy, the place was safe, and the team was very helpful throughout our stay.</p>
-      <div class="review-author">
-        <div class="review-avatar">N</div>
-        <div><div class="review-name">Neha Patil</div><div class="review-loc">Pune</div></div>
+
+  <div class="reviews-slider-wrap">
+    <div class="reviews-track" id="reviewsTrack">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">One of the best camping experiences I've had. The tents were cozy, the place was safe, and the team was very helpful throughout our stay.</p>
+        <div class="review-author">
+          <div class="review-avatar">N</div>
+          <div><div class="review-name">Neha Patil</div><div class="review-loc">Pune</div></div>
+        </div>
+        <div class="quote-mark">"</div>
       </div>
-      <div class="quote-mark">"</div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Perfect place to relax with friends and family. The staff provided excellent service, and the activities kept us entertained throughout the night.</p>
+        <div class="review-author">
+          <div class="review-avatar">A</div>
+          <div><div class="review-name">Arjun Mehta</div><div class="review-loc">Mumbai</div></div>
+        </div>
+        <div class="quote-mark">"</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Everything was beyond expectations – food, music, activities, and the overall hospitality. Highly recommended for nature lovers and adventure seekers!</p>
+        <div class="review-author">
+          <div class="review-avatar">K</div>
+          <div><div class="review-name">Karan Joshi</div><div class="review-loc">Nashik</div></div>
+        </div>
+        <div class="quote-mark">"</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Amazing experience! The lakeside view at night with bonfire and DJ music was absolutely magical. Will definitely come back again!</p>
+        <div class="review-author">
+          <div class="review-avatar">P</div>
+          <div><div class="review-name">Priya Sharma</div><div class="review-loc">Pune</div></div>
+        </div>
+        <div class="quote-mark">"</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Great food, great vibes, great people! The cottage was clean and comfortable. Sunrise over the lake was breathtaking. 10/10 recommend!</p>
+        <div class="review-author">
+          <div class="review-avatar">R</div>
+          <div><div class="review-name">Rahul Desai</div><div class="review-loc">Mumbai</div></div>
+        </div>
+        <div class="quote-mark">"</div>
+      </div>
     </div>
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">Perfect place to relax with friends and family. The staff provided excellent service, and the activities kept us entertained throughout the night.</p>
-      <div class="review-author">
-        <div class="review-avatar">A</div>
-        <div><div class="review-name">Arjun Mehta</div><div class="review-loc">Mumbai</div></div>
-      </div>
-      <div class="quote-mark">"</div>
-    </div>
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p class="review-text">Everything was beyond expectations – food, music, activities, and the overall hospitality. Highly recommended for nature lovers and adventure seekers!</p>
-      <div class="review-author">
-        <div class="review-avatar">K</div>
-        <div><div class="review-name">Karan Joshi</div><div class="review-loc">Nashik</div></div>
-      </div>
-      <div class="quote-mark">"</div>
+
+    <!-- Nav -->
+    <div class="slider-nav">
+      <button class="slider-btn" id="revPrev"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="slider-dots" id="revDots"></div>
+      <button class="slider-btn" id="revNext"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
   </div>
 </div>
@@ -1168,7 +1230,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <span class="footer-logo-txt">Pawna Lake Camping</span>
+      <span class="footer-logo-txt">AquaRush Waterpark</span>
       <p>Enjoy the best Pawna Lake Camping near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities for unforgettable memories.</p>
       <div class="footer-socials">
         <a href="#" class="footer-social">f</a>
@@ -1206,7 +1268,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025, All Rights Reserved. Stay in Pawna Lake.</span>
+    <span>© 2025, All Rights Reserved. AquaRush Waterpark.</span>
     <span>Made with <i class="fa-solid fa-leaf"></i> for nature lovers</span>
   </div>
 </footer>
@@ -1456,6 +1518,21 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
   });
 });
+
+// Testimonials Slider
+(function(){
+  const track = document.getElementById('testiTrack');
+  const dotsWrap = document.getElementById('testiDots');
+  if(!track) return;
+  const cards = track.querySelectorAll('.review-card');
+  const total = Math.ceil(cards.length/3);
+  let cur=0;
+  for(let i=0;i<total;i++){const d=document.createElement('button');d.className='testi-dot'+(i===0?' active':'');d.onclick=()=>go(i);dotsWrap.appendChild(d);}
+  function go(n){cur=(n+total)%total;const w=track.parentElement.offsetWidth;track.style.transform=`translateX(-${cur*w}px)`;document.querySelectorAll('.testi-dot').forEach((d,i)=>d.classList.toggle('active',i===cur));}
+  window.testiNext=()=>go(cur+1);
+  window.testiPrev=()=>go(cur-1);
+  setInterval(()=>window.testiNext(),3500);
+})();
 
 // Scroll reveal AOS
 const aosObserver = new IntersectionObserver(entries=>{
