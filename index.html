@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AquaRush Waterpark – Fun & Adventure Near Lonavala</title>
+<title>Sahyadri Camp – Near Lonavala</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Merriweather:ital,wght@0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root {
-  --green-dark: #43A047;
-  --green-mid: #4CAF50;
-  --green-light: #66BB6A;
-  --green-pale: #C8E6C9;
-  --bg: #F1F8E9;
-  --bg2: #E8F5E9;
-  --orange: #FF9800;
-  --orange-dark: #F57C00;
+  --green-dark: #2E8B57;
+  --green-mid: #3CB371;
+  --green-light: #66BB8A;
+  --green-pale: #d4edda;
+  --bg: #f5fbf6;
+  --bg2: #edf7ef;
+  --orange: #F4A025;
+  --orange-dark: #E08B10;
   --text: #1B1B1B;
   --text-muted: #5a6a5a;
   --white: #ffffff;
@@ -113,7 +113,7 @@ nav{
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.7s 0.3s ease both;margin-bottom:2.5rem;}
 .btn-orange{
   background:var(--orange);color:white;
-  padding:15px 32px;border-radius:50px;
+  padding:14px 30px;border-radius:10px;
   font-weight:800;font-size:0.92rem;text-decoration:none;
   letter-spacing:0.05em;text-transform:uppercase;
   transition:all 0.25s;display:inline-flex;align-items:center;gap:8px;
@@ -122,7 +122,7 @@ nav{
 .btn-orange:hover{background:var(--orange-dark);transform:translateY(-3px);}
 .btn-outline-white{
   border:2px solid rgba(255,255,255,0.6);color:white;
-  padding:14px 30px;border-radius:50px;
+  padding:14px 30px;border-radius:10px;
   font-weight:700;font-size:0.9rem;text-decoration:none;
   transition:all 0.25s;letter-spacing:0.04em;
   backdrop-filter:blur(6px);
@@ -181,11 +181,13 @@ nav{
 .section-tag{
   font-size:0.75rem;font-weight:800;letter-spacing:0.2em;
   text-transform:uppercase;color:var(--orange);margin-bottom:0.6rem;
+  display:block;text-align:center;
 }
 .section-title{
   font-family:'Merriweather',serif;
   font-size:clamp(1.6rem,3vw,2.4rem);
   color:var(--text);line-height:1.25;margin-bottom:1rem;
+  text-align:center;
 }
 .section-sub{color:var(--text-muted);font-size:0.95rem;line-height:1.75;font-weight:400;max-width:560px;}
 section{padding:5rem 4%;}
@@ -357,23 +359,23 @@ section{padding:5rem 4%;}
   gap:1.5rem;max-width:1100px;margin:2.5rem auto 0;
 }
 .act-card{
-  background:white;border-radius:var(--radius);
+  background:white;border-radius:16px;
   overflow:hidden;
-  box-shadow:var(--card-shadow);
+  box-shadow:0 4px 20px rgba(0,0,0,0.08);
   transition:all 0.3s;cursor:default;
 }
 .act-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 32px rgba(46,125,50,0.16);
+  transform:translateY(-6px);
+  box-shadow:0 12px 36px rgba(46,125,50,0.15);
 }
 .act-img{
-  width:100%;height:180px;overflow:hidden;
+  width:100%;height:200px;overflow:hidden;
 }
 .act-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;}
 .act-card:hover .act-img img{transform:scale(1.06);}
-.act-body{padding:1rem 1.1rem 1.2rem;}
-.act-title{font-size:0.95rem;font-weight:800;color:var(--green-dark);margin-bottom:0.3rem;}
-.act-desc{font-size:0.78rem;color:var(--text-muted);line-height:1.55;}
+.act-body{padding:1.2rem 1.3rem 1.4rem;}
+.act-title{font-size:1rem;font-weight:800;color:var(--green-dark);margin-bottom:0.4rem;}
+.act-desc{font-size:0.8rem;color:var(--text-muted);line-height:1.6;}
 
 /* ===== WHY CHOOSE US ===== */
 .why-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1100px;margin:2.5rem auto 0;}
@@ -432,22 +434,30 @@ section{padding:5rem 4%;}
 .testimonials-bg .section-tag{color:#FFE082;text-align:center;display:block;}
 .testimonials-bg .section-title{color:white;text-align:center;margin-bottom:0;}
 
-/* SLIDER */
+/* SLIDER - infinite marquee */
 .reviews-slider-wrap{
-  position:relative;max-width:1100px;margin:2.5rem auto 0;
+  position:relative;max-width:100%;margin:2.5rem 0 0;
+  overflow:hidden;
+  -webkit-mask-image:linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  mask-image:linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
 }
 .reviews-track{
   display:flex;gap:1.5rem;
-  transition:transform 0.5s cubic-bezier(.4,0,.2,1);
-  will-change:transform;
+  animation:marquee 18s linear infinite;
+  width:max-content;
+}
+.reviews-track:hover{animation-play-state:paused;}
+@keyframes marquee{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
 }
 .review-card{
   background:white;border-radius:var(--radius);
   padding:1.75rem;position:relative;
-  flex:0 0 calc(33.333% - 1rem);
-  min-width:0;box-sizing:border-box;
+  flex:0 0 340px;
+  box-sizing:border-box;
 }
-.review-card:hover{transform:translateY(-5px);}
+.review-card:hover{transform:translateY(-5px);transition:transform 0.3s;}
 .stars{color:var(--orange);font-size:0.95rem;margin-bottom:1rem;letter-spacing:2px;}
 .review-text{
   font-size:0.9rem;color:var(--text-muted);line-height:1.7;
@@ -465,57 +475,53 @@ section{padding:5rem 4%;}
   position:absolute;right:1.5rem;bottom:1.25rem;
   font-size:3rem;color:var(--green-pale);font-family:'Merriweather',serif;line-height:1;
 }
-/* slider nav */
-.slider-nav{
-  display:flex;align-items:center;justify-content:center;
-  gap:1rem;margin-top:2rem;
-}
-.slider-btn{
-  width:40px;height:40px;border-radius:50%;
-  background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.4);
-  color:#fff;font-size:1rem;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:all 0.2s;backdrop-filter:blur(6px);
-}
-.slider-btn:hover{background:var(--orange);border-color:var(--orange);}
-.slider-dots{display:flex;gap:8px;align-items:center;}
-.slider-dot{
-  width:8px;height:8px;border-radius:50%;
-  background:rgba(255,255,255,0.35);cursor:pointer;
-  transition:all 0.3s;border:none;padding:0;
-}
-.slider-dot.active{background:#fff;width:24px;border-radius:4px;}
-@media(max-width:700px){
-  .review-card{flex:0 0 calc(100% - 0px);}
-}
 
 /* ===== FAQ ===== */
-.faq-bg{background:var(--bg2);}
+.faq-bg{background:#fff;}
 .faq-wrap{
   display:grid;grid-template-columns:1fr 1fr;
   gap:1rem;max-width:1100px;margin:2.5rem auto 0;
 }
-.faq-item{background:white;border-radius:12px;overflow:hidden;box-shadow:var(--card-shadow);}
+.faq-item{
+  background:white;border-radius:12px;
+  border:1.5px solid #e8e8e8;
+  overflow:hidden;
+  transition:border-color 0.2s;
+}
+.faq-item.open{border-color:#e0e0e0;}
 .faq-q{
   width:100%;text-align:left;padding:1.1rem 1.25rem;
   background:none;border:none;cursor:pointer;
   display:flex;justify-content:space-between;align-items:center;gap:1rem;
-  font-family:'Nunito',sans-serif;font-size:0.85rem;font-weight:700;
-  color:var(--green-dark);text-transform:uppercase;letter-spacing:0.06em;
+  font-family:'Nunito',sans-serif;font-size:0.82rem;font-weight:800;
+  color:#555;text-transform:uppercase;letter-spacing:0.06em;
 }
+.faq-item.open .faq-q{color:var(--green-dark);}
 .faq-icon{
-  width:30px;height:30px;flex-shrink:0;
-  background:var(--orange);border-radius:50%;
+  width:32px;height:32px;flex-shrink:0;
+  background:var(--green-dark);border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  color:white;font-size:1rem;font-weight:700;transition:transform 0.3s;
+  color:white;font-size:0.9rem;font-weight:700;
+  transition:transform 0.3s,background 0.2s;
 }
-.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--green-dark);}
+.faq-item.open .faq-icon{
+  background:var(--orange);
+  transform:rotate(0deg);
+}
+/* show up-arrow when open, question mark when closed */
+.faq-icon::after{content:'?';}
+.faq-item.open .faq-icon::after{content:'▲';font-size:0.7rem;}
 .faq-a{
-  max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.25s;
-  font-size:0.88rem;color:var(--text-muted);line-height:1.7;
+  max-height:0;overflow:hidden;
+  transition:max-height 0.4s ease, padding 0.3s;
+  font-size:0.88rem;color:#555;line-height:1.75;
   padding:0 1.25rem;
 }
-.faq-item.open .faq-a{max-height:200px;padding:0 1.25rem 1.1rem;}
+.faq-item.open .faq-a{
+  max-height:300px;
+  padding:0.8rem 1.25rem 1.2rem;
+  border-top:1px solid #f0f0f0;
+}
 
 /* ===== FOOTER ===== */
 footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
@@ -561,7 +567,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 }
 .float-btn:hover{transform:scale(1.12);}
 .float-wa{background:#25D366;}
-.float-call{background:var(--green-dark);}
+.float-call{background:#2E8B57;}
 
 /* ===== SCROLL ANIMATIONS ===== */
 [data-aos]{opacity:0;transition:opacity 0.7s ease, transform 0.7s ease;}
@@ -587,13 +593,34 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 
 /* ===== CONTACT PAGE ===== */
 .contact-info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:960px;margin:2.5rem auto;}
-.ci-card{background:white;border-radius:var(--radius);padding:1.75rem;display:flex;align-items:flex-start;gap:1rem;box-shadow:var(--card-shadow);border:1.5px solid var(--green-pale);}
-.ci-icon-box{width:48px;height:48px;flex-shrink:0;background:var(--green-dark);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;}
-.ci-label{font-size:0.72rem;font-weight:800;color:var(--green-dark);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.3rem;}
-.ci-value{font-size:0.9rem;font-weight:700;color:var(--text);}
+.ci-card{
+  background:white;border-radius:12px;
+  padding:1.25rem 1.5rem;
+  display:flex;align-items:flex-start;gap:1rem;
+  box-shadow:0 2px 16px rgba(0,0,0,0.08);
+  border:1.5px solid #e8f5e9;
+  transition:transform 0.2s,box-shadow 0.2s;
+}
+.ci-card:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(46,125,50,0.12);}
+.ci-icon-box{
+  width:48px;height:48px;flex-shrink:0;
+  background:var(--green-dark);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;color:white;
+}
+.ci-label{font-size:0.7rem;font-weight:800;color:var(--green-dark);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.3rem;}
+.ci-value{font-size:0.9rem;font-weight:600;color:var(--text);line-height:1.5;}
 .ci-value a{color:var(--text);text-decoration:none;}
 .ci-value a:hover{color:var(--green-dark);}
-.contact-form-wrap{max-width:1100px;margin:0 auto;padding:0 4% 5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+.contact-form-wrap{
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2.5rem;
+  align-items:start;
+}
+@media(max-width:900px){.contact-form-wrap{grid-template-columns:1fr;}}
 .contact-info-grid{display:flex;flex-direction:column;gap:1.5rem;margin:0;}
 .contact-info-grid .section-header{margin-bottom:0.5rem;}
 .cf-card{background:white;border-radius:20px;padding:2.5rem;box-shadow:var(--card-shadow);}
@@ -686,7 +713,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 .svc-body2 h3{
   font-size:1.15rem;
   font-weight:800;
-  color:#2E7D32;
+  color:#2E8B57;
   margin-bottom:.5rem;
 }
 .svc-body2 p{
@@ -706,13 +733,13 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 }
 .svc-rupee{
   font-size:1.5rem;
-  color:#2E7D32;
+  color:#2E8B57;
   font-weight:700;
 }
 .svc-amt2{
   font-size:1.7rem;
   font-weight:900;
-  color:#2E7D32;
+  color:#2E8B57;
 }
 .svc-per2{
   font-size:.82rem;
@@ -725,7 +752,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   align-items:center;
   justify-content:center;
   gap:7px;
-  background:#2E7D32;
+  background:#2E8B57;
   color:#fff;
   padding:12px;
   border-radius:8px;
@@ -751,8 +778,8 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   <div class="nav-logo">
     <div class="nav-logo-icon">PL</div>
     <div class="nav-logo-text">
-      <div class="nav-logo-title">AquaRush Waterpark</div>
-      <div class="nav-logo-sub">Fun & Adventure Near Lonavala</div>
+      <div class="nav-logo-title">Sahyadri Camp</div>
+      <div class="nav-logo-sub">Near Lonavala</div>
     </div>
   </div>
   <ul class="nav-links">
@@ -780,29 +807,29 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 <section id="hero" class="hero">
   <div class="hero-content">
     <div class="hero-eyebrow"><i class="fa-solid fa-location-dot"></i> Pawna Dam &nbsp;&middot;&nbsp; Near Lonavala</div>
-    <h1>Dive Into<br><span>Endless Fun</span><br>at AquaRush<br><em>Waterpark</em></h1>
+    <h1>Experience<br><span>Lakeside Magic</span><br>at Sahyadri Camp<br><em>Camping</em></h1>
     <p>Thrilling water slides, wave pools, lazy rivers & non-stop fun for the whole family. The ultimate waterpark experience near Lonavala, Pune & Mumbai.</p>
     <div class="hero-btns">
-      <a href="#booking" class="btn-orange"><i class="fa-solid fa-ticket"></i> Book Tickets</a>
-      <a href="#services" class="btn-outline-white"><i class="fa-solid fa-water"></i> View Packages</a>
+      <a href="#booking" class="btn-orange"><i class="fa-solid fa-ticket"></i> Book Now</a>
+      <a href="#services" class="btn-outline-white"><i class="fa-solid fa-water"></i> Our Packages</a>
     </div>
     <div class="hero-badges">
       <div class="hero-badge-item"><i class="fa-solid fa-star"></i><strong>4.9</strong><span>Rating</span></div>
       <div class="hero-badge-item"><i class="fa-solid fa-users"></i><strong>14K+</strong><span>Visitors</span></div>
-      <div class="hero-badge-item"><i class="fa-solid fa-water"></i><strong>20+</strong><span>Water Rides</span></div>
+      <div class="hero-badge-item"><i class="fa-solid fa-water"></i><strong>5K+</strong><span>Happy Campers</span></div>
     </div>
   </div>
 
   <!-- WAVE DIVIDER -->
   <div style="position:absolute;bottom:0;left:0;width:100%;z-index:3;line-height:0;pointer-events:none;">
     <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:100px;">
-      <path d="M0 43.9999C106.667 43.9999 213.333 7.99994 320 7.99994C426.667 7.99994 533.333 43.9999 640 43.9999C746.667 43.9999 853.333 7.99994 960 7.99994C1066.67 7.99994 1173.33 43.9999 1280 43.9999C1386.67 43.9999 1440 19.0266 1440 9.01329V100H0V43.9999Z" fill="#F1F8E9"/>
+      <path d="M0 43.9999C106.667 43.9999 213.333 7.99994 320 7.99994C426.667 7.99994 533.333 43.9999 640 43.9999C746.667 43.9999 853.333 7.99994 960 7.99994C1066.67 7.99994 1173.33 43.9999 1280 43.9999C1386.67 43.9999 1440 19.0266 1440 9.01329V100H0V43.9999Z" fill="#f5fbf6"/>
     </svg>
   </div>
 </section>
 <div style="padding:0 4%;margin-top:-120px;position:relative;z-index:10;">
 <div id="booking" class="booking-strip">
-  <h2>Book Your Waterpark Visit!</h2>
+  <h2>Book Your Camping Experience!</h2>
   <div class="booking-form">
     <div class="form-field">
       <input type="text" placeholder="Enter Full Name">
@@ -831,13 +858,13 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 <section id="about">
   <div class="about-wrap">
     <div class="about-img-wrap">
-      <img src="https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=800&q=80" alt="Pawna Lake Camping">
+      <img src="https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=800&q=80" alt="Sahyadri Camp">
       <div class="about-img-badge"><i class="fa-solid fa-leaf"></i> Est. 2021</div>
     </div>
     <div class="about-text">
       <div class="section-tag">About Us</div>
-      <h2 class="section-title">Welcome to AquaRush Waterpark</h2>
-      <p class="section-sub">Welcome to <strong>Pawna Lake Waterpark near Lonavala</strong>, Maharashtra's most exciting water adventure destination. We offer thrilling water slides, wave pools, lazy rivers, kids' zones, and much more for an unforgettable day out.</p>
+      <h2 class="section-title">Welcome to Sahyadri Camp</h2>
+      <p class="section-sub">Welcome to <strong>Sahyadri Camp near Lonavala</strong>, Maharashtra's most exciting water adventure destination. We offer thrilling water slides, wave pools, lazy rivers, kids' zones, and much more for an unforgettable day out.</p>
       <p class="section-sub" style="margin-top:1rem;">Located amidst the scenic Sahyadri hills, our waterpark is perfect for families, friends, and corporate groups looking for the <strong>best waterpark experience near Pune and Mumbai</strong>.</p>
       <ul class="about-checks">
         <li>20+ Water Rides</li>
@@ -855,7 +882,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 
 <!-- SERVICES -->
 <section id="services" class="services-section">
-  <h2 class="services-main-title">Our Waterpark Packages</h2>
+  <h2 class="services-main-title">Our Camping Packages</h2>
   <div class="services-grid">
 
     <div class="svc-card2">
@@ -863,7 +890,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
         <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=700&q=80" alt="Tent Camping">
       </div>
       <div class="svc-body2">
-        <h3>Day Pass</h3>
+        <h3>Tent Camping</h3>
         <p>Full day access to all water rides, wave pool, lazy river & kids zone.</p>
         <div class="svc-price2"><span class="svc-rupee">₹</span><span class="svc-amt2">999/-</span><span class="svc-per2">Per person</span></div>
         <a href="#booking" class="btn-svc2"><i class="fa-solid fa-calendar-check"></i> BOOK NOW</a>
@@ -912,7 +939,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 <!-- SCHEDULE -->
 <div class="schedule-bg">
   <div style="text-align:center;">
-    <h2 class="schedule-title-main">Pawna Lake Camping</h2>
+    <h2 class="schedule-title-main">Sahyadri Camp</h2>
     <span class="schedule-title-sub">Schedule</span>
   </div>
 
@@ -920,32 +947,32 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
     <!-- TOP ROW -->
     <div class="sched-track">
       <div class="sched-item">
-        <div class="sched-icon"><img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=150&q=80" alt="Tent"></div>
+        <div class="sched-icon"><img src="https://img.icons8.com/color/96/camping-tent.png" alt="Tent"></div>
         <div class="sched-label">Grab Tents</div>
         <div class="sched-time">4 pm</div>
       </div>
       <div class="sched-item">
-        <div class="sched-icon"><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=150&q=80" alt="Sunset"></div>
+        <div class="sched-icon"><img src="https://img.icons8.com/color/96/sunset.png" alt="Sunset"></div>
         <div class="sched-label orange">Enjoy Sunset</div>
         <div class="sched-time">6:30 pm</div>
       </div>
       <div class="sched-item">
-        <div class="sched-icon"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=150&q=80" alt="Food"></div>
-        <div class="sched-label teal">Chicken Chilli & Paneer</div>
+        <div class="sched-icon"><img src="https://img.icons8.com/color/96/chicken.png" alt="Food"></div>
+        <div class="sched-label teal">Chikan Chilli & Paneer Chilli</div>
         <div class="sched-time">8:00 pm</div>
       </div>
       <div class="sched-item">
-        <div class="sched-icon"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=150&q=80" alt="Dinner"></div>
+        <div class="sched-icon"><img src="https://img.icons8.com/color/96/dining-room.png" alt="Dinner"></div>
         <div class="sched-label">Unlimited Dinner</div>
-        <div class="sched-time">9:30–11 pm</div>
+        <div class="sched-time">9:30 to 11 pm</div>
       </div>
       <div class="sched-item">
-        <div class="sched-icon"><img src="https://images.unsplash.com/photo-1478827387698-1527781a4887?w=150&q=80" alt="Sleep"></div>
+        <div class="sched-icon"><img src="https://img.icons8.com/color/96/sleeping-in-bed.png" alt="Sleep"></div>
         <div class="sched-label blue">Sleep in Tent</div>
         <div class="sched-time">• • •</div>
       </div>
       <div class="sched-item">
-        <div class="sched-icon"><img src="https://images.unsplash.com/photo-1467173572719-f14b9fb86e5f?w=150&q=80" alt="Camera"></div>
+        <div class="sched-icon"><img src="https://img.icons8.com/color/96/camera.png" alt="Camera"></div>
         <div class="sched-label purple">Photo Session</div>
         <div class="sched-time">9 am</div>
       </div>
@@ -975,7 +1002,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
         <div class="sched-time">6–10 pm</div>
       </div>
       <div class="sched-item">
-        <div class="sched-icon"><img src="https://img.icons8.com/color/96/bonfire.png" alt="Campfire"></div>
+        <div class="sched-icon"><img src="https://img.icons8.com/color/96/fire-element.png" alt="Campfire"></div>
         <div class="sched-label red">Warmy Campfire</div>
         <div class="sched-time">10:30 pm</div>
       </div>
@@ -1004,46 +1031,46 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
     <div class="section-tag">Activities</div>
     <h2 class="section-title">Enjoy Your Adventure Here</h2>
   </div>
-  <div class="activities-grid" data-aos="fade-up">
+  <div class="activities-grid">
     <div class="act-card">
-      <div class="act-img"><img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=400&q=80" alt="Tent"></div>
+      <div class="act-img"><img src="https://images.unsplash.com/photo-1537225228614-56cc3556d7ed?w=600&q=80" alt="Tent"></div>
       <div class="act-body"><div class="act-title">Grab Tent</div><div class="act-desc">Stay with family, friends, or your spouse. Enjoy the outing without compromising the view and adventure.</div></div>
     </div>
     <div class="act-card">
-      <div class="act-img"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=80" alt="Snacks"></div>
+      <div class="act-img"><img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80" alt="Snacks"></div>
       <div class="act-body"><div class="act-title">Snacks & Tea</div><div class="act-desc">Evening snacks on your platters. We provide an addictive platter with different types of pakoras.</div></div>
     </div>
     <div class="act-card">
-      <div class="act-img"><img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=400&q=80" alt="Sports"></div>
+      <div class="act-img"><img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=600&q=80" alt="Sports"></div>
       <div class="act-body"><div class="act-title">Sports Activities</div><div class="act-desc">Dart game, archery, cricket, football, carom, volleyball, badminton and many more.</div></div>
     </div>
     <div class="act-card">
-      <div class="act-img"><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=400&q=80" alt="Sunset"></div>
+      <div class="act-img"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Sunset"></div>
       <div class="act-body"><div class="act-title">Enjoy Sunset Point</div><div class="act-desc">Enjoy evening snacks with a beautiful view of the sunset over the lake.</div></div>
     </div>
     <div class="act-card">
-      <div class="act-img"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80" alt="Starters"></div>
+      <div class="act-img"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Starters"></div>
       <div class="act-body"><div class="act-title">Delicious Starters</div><div class="act-desc">Chicken Chilli and Paneer Chilli — spicy Indo-Chinese starters with tangy chili-garlic sauce.</div></div>
     </div>
     <div class="act-card">
-      <div class="act-img"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=80" alt="Dinner"></div>
+      <div class="act-img"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Dinner"></div>
       <div class="act-body"><div class="act-title">Unlimited Dinner</div><div class="act-desc">Unlimited dinner with many options to satisfy your taste. Indian food that fulfills your cravings.</div></div>
     </div>
     <div class="act-card">
-      <div class="act-img"><img src="https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=400&q=80" alt="Bonfire"></div>
+      <div class="act-img"><img src="https://images.unsplash.com/photo-1445308394109-4ec2920981b1?w=600&q=80" alt="Bonfire"></div>
       <div class="act-body"><div class="act-title">Bonfire</div><div class="act-desc">Experience the soothing warmth of a bonfire and enjoy the night under the open sky.</div></div>
     </div>
     <div class="act-card">
-      <div class="act-img"><img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&q=80" alt="DJ Music"></div>
+      <div class="act-img"><img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=80" alt="DJ Music"></div>
       <div class="act-body"><div class="act-title">DJ & Live Music</div><div class="act-desc">Dance and enjoy amazing music with your friends and loved ones through the night.</div></div>
     </div>
     <div class="act-card">
-      <div class="act-img"><img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400&q=80" alt="Breakfast"></div>
+      <div class="act-img"><img src="https://images.unsplash.com/photo-1525811902-f2342640856e?w=600&q=80" alt="Breakfast"></div>
       <div class="act-body"><div class="act-title">Morning Breakfast</div><div class="act-desc">Start your day with aromatic tea, brewed coffee, and Poha. A healthy morning start.</div></div>
     </div>
     <div class="act-card">
-      <div class="act-img"><img src="https://images.unsplash.com/photo-1467173572719-f14b9fb86e5f?w=400&q=80" alt="Photography"></div>
-      <div class="act-body"><div class="act-title">Photography</div><div class="act-desc">Romantic couple photoshoot at Pawna Lake — capture love amidst scenic sunsets and landscapes!</div></div>
+      <div class="act-img"><img src="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=600&q=80" alt="Photography"></div>
+      <div class="act-body"><div class="act-title">Photography</div><div class="act-desc">Romantic couple photoshoot at the lake — capture love amidst scenic sunsets and landscapes!</div></div>
     </div>
   </div>
 </section>
@@ -1057,7 +1084,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
     <div>
       <div class="section-tag">Why Choose Us</div>
       <h2 class="section-title">Get your story ready for campfire storytime.</h2>
-      <p class="section-sub">Experience the best Pawna Lake Camping with cozy stays, tasty food, lakeside views, and exciting activities, making your trip truly memorable.</p>
+      <p class="section-sub">Experience the best Sahyadri Camp with cozy stays, tasty food, lakeside views, and exciting activities, making your trip truly memorable.</p>
       <div class="why-list">
         <div class="why-item">
           <div class="why-icon-box">⛺</div>
@@ -1100,64 +1127,64 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
     <div class="contact-card">
       <div class="cc-icon-box"><i class="fa-solid fa-phone"></i></div>
       <h3>Customer Service</h3>
-      <p>24×7 support for bookings, quick help, and a hassle-free Pawna Lake camping experience.</p>
+      <p>24×7 support for bookings, quick help, and a hassle-free Sahyadri Camp experience.</p>
       <a href="tel:+918381056352" class="btn-cc">CALL US</a>
     </div>
     <div class="contact-card">
       <div class="cc-icon-box"><i class="fa-solid fa-calendar-check"></i></div>
       <h3>Online Booking</h3>
-      <p>Easy and secure online booking for a hassle-free Pawna Lake camping experience.</p>
+      <p>Easy and secure online booking for a hassle-free Sahyadri Camp experience.</p>
       <a href="#booking" class="btn-cc">BOOK NOW</a>
     </div>
   </div>
 </div>
 
 <!-- FAQ -->
-<section id="faq" class="faq-bg" style="padding-top:12rem;">
+<section id="faq" class="faq-bg" style="padding-top:5rem;">
   <div style="text-align:center;margin-bottom:0.5rem;">
     <p style="font-size:1rem;color:var(--text-muted);font-weight:600;margin-bottom:0.3rem;">Need more help?</p>
     <div class="section-tag">Common Questions</div>
     <h2 class="section-title">Most Popular Questions</h2>
   </div>
-  <div class="faq-wrap" data-aos="fade-up">
+  <div class="faq-wrap">
     <div class="faq-item open">
-      <button class="faq-q" onclick="toggleFaq(this)">Where is Pawna Lake Camping Located? <div class="faq-icon">+</div></button>
-      <div class="faq-a">Pawna Lake Camping is located near Lonavala, easily accessible from Pune (1.5 hrs) and Mumbai (2 hrs). Address: Pawna Dam, Gevhande Khadak, Thakursai, Maharashtra 410406.</div>
+      <button class="faq-q" onclick="toggleFaq(this)">Where is Sahyadri Camp Located? <div class="faq-icon"></div></button>
+      <div class="faq-a">Sahyadri Camp is located near Lonavala, easily accessible from Pune (1.5 hrs) and Mumbai (2 hrs). Address: Pawna Dam, Gevhande Khadak, Thakursai, Maharashtra 410406.</div>
     </div>
     <div class="faq-item open">
-      <button class="faq-q" onclick="toggleFaq(this)">Is Pawna Lake Camping Safe for Families and Kids? <div class="faq-icon">+</div></button>
+      <button class="faq-q" onclick="toggleFaq(this)">Is Sahyadri Camp Safe for Families and Kids? <div class="faq-icon"></div></button>
       <div class="faq-a">Absolutely! Our campsite is safe and family-friendly with 24/7 assistance. Children love the activities and natural surroundings here.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">How Do I Book Pawna Lake Camping? <div class="faq-icon">+</div></button>
+      <button class="faq-q" onclick="toggleFaq(this)">How Do I Book Sahyadri Camp? <div class="faq-icon"></div></button>
       <div class="faq-a">You can book easily through our online booking form above, or by contacting us directly on WhatsApp (+91 83810 56352) for instant confirmation.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">What Should I Carry for Camping? <div class="faq-icon">+</div></button>
+      <button class="faq-q" onclick="toggleFaq(this)">What Should I Carry for Camping? <div class="faq-icon"></div></button>
       <div class="faq-a">Carry comfortable clothes, personal toiletries, valid ID proof, and a light jacket for the cool evening. We provide all camping essentials including tents, food, and activity equipment.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">What Types of Stay Options Are Available? <div class="faq-icon">+</div></button>
+      <button class="faq-q" onclick="toggleFaq(this)">What Types of Stay Options Are Available? <div class="faq-icon"></div></button>
       <div class="faq-a">We offer Tent Camping (₹999), Standard Triangle (₹1499), Cabin Cottage (₹1699), and Cozy Cottages (₹2499) — all inclusive of meals and activities.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">Do You Provide Washroom and Shower Facilities? <div class="faq-icon">+</div></button>
+      <button class="faq-q" onclick="toggleFaq(this)">Do You Provide Washroom and Shower Facilities? <div class="faq-icon"></div></button>
       <div class="faq-a">Yes, we provide clean and hygienic washrooms and shower facilities. Cozy Cottages have attached washrooms while other packages use shared clean facilities.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">What Activities Are Included in the Camping Package? <div class="faq-icon">+</div></button>
+      <button class="faq-q" onclick="toggleFaq(this)">What Activities Are Included in the Camping Package? <div class="faq-icon"></div></button>
       <div class="faq-a">Activities include bonfire, live music/DJ, outdoor sports (cricket, football, badminton, carom, archery), sunset view, photography, evening snacks, unlimited dinner, and morning breakfast.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">What is the Check-in and Check-out Timing? <div class="faq-icon">+</div></button>
+      <button class="faq-q" onclick="toggleFaq(this)">What is the Check-in and Check-out Timing? <div class="faq-icon"></div></button>
       <div class="faq-a">Check-in is at 4:00 PM and check-out is at 11:00 AM the next morning. Please inform us in advance if you are running late.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">Is Food Included in the Package? <div class="faq-icon">+</div></button>
+      <button class="faq-q" onclick="toggleFaq(this)">Is Food Included in the Package? <div class="faq-icon"></div></button>
       <div class="faq-a">Yes! All packages include evening snacks & tea, starters (Chicken Chilli / Paneer Chilli), unlimited dinner, and morning breakfast. Food is fully included in all pricing.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">Can I Reach Pawna Lake Camping by My Own Vehicle? <div class="faq-icon">+</div></button>
+      <button class="faq-q" onclick="toggleFaq(this)">Can I Reach Sahyadri Camp by My Own Vehicle? <div class="faq-icon"></div></button>
       <div class="faq-a">Yes, you can drive your own vehicle and ample parking is available at the campsite. The location is well-connected via Mumbai-Pune Expressway.</div>
     </div>
   </div>
@@ -1169,59 +1196,69 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   <h2 class="section-title">What they say about us</h2>
 
   <div class="reviews-slider-wrap">
-    <div class="reviews-track" id="reviewsTrack">
+    <div class="reviews-track">
+      <!-- Original set -->
       <div class="review-card">
         <div class="stars">★★★★★</div>
         <p class="review-text">One of the best camping experiences I've had. The tents were cozy, the place was safe, and the team was very helpful throughout our stay.</p>
-        <div class="review-author">
-          <div class="review-avatar">N</div>
-          <div><div class="review-name">Neha Patil</div><div class="review-loc">Pune</div></div>
-        </div>
+        <div class="review-author"><div class="review-avatar">N</div><div><div class="review-name">Neha Patil</div><div class="review-loc">Pune</div></div></div>
         <div class="quote-mark">"</div>
       </div>
       <div class="review-card">
         <div class="stars">★★★★★</div>
         <p class="review-text">Perfect place to relax with friends and family. The staff provided excellent service, and the activities kept us entertained throughout the night.</p>
-        <div class="review-author">
-          <div class="review-avatar">A</div>
-          <div><div class="review-name">Arjun Mehta</div><div class="review-loc">Mumbai</div></div>
-        </div>
+        <div class="review-author"><div class="review-avatar">A</div><div><div class="review-name">Arjun Mehta</div><div class="review-loc">Mumbai</div></div></div>
         <div class="quote-mark">"</div>
       </div>
       <div class="review-card">
         <div class="stars">★★★★★</div>
         <p class="review-text">Everything was beyond expectations – food, music, activities, and the overall hospitality. Highly recommended for nature lovers and adventure seekers!</p>
-        <div class="review-author">
-          <div class="review-avatar">K</div>
-          <div><div class="review-name">Karan Joshi</div><div class="review-loc">Nashik</div></div>
-        </div>
+        <div class="review-author"><div class="review-avatar">K</div><div><div class="review-name">Karan Joshi</div><div class="review-loc">Nashik</div></div></div>
         <div class="quote-mark">"</div>
       </div>
       <div class="review-card">
         <div class="stars">★★★★★</div>
         <p class="review-text">Amazing experience! The lakeside view at night with bonfire and DJ music was absolutely magical. Will definitely come back again!</p>
-        <div class="review-author">
-          <div class="review-avatar">P</div>
-          <div><div class="review-name">Priya Sharma</div><div class="review-loc">Pune</div></div>
-        </div>
+        <div class="review-author"><div class="review-avatar">P</div><div><div class="review-name">Priya Sharma</div><div class="review-loc">Pune</div></div></div>
         <div class="quote-mark">"</div>
       </div>
       <div class="review-card">
         <div class="stars">★★★★★</div>
         <p class="review-text">Great food, great vibes, great people! The cottage was clean and comfortable. Sunrise over the lake was breathtaking. 10/10 recommend!</p>
-        <div class="review-author">
-          <div class="review-avatar">R</div>
-          <div><div class="review-name">Rahul Desai</div><div class="review-loc">Mumbai</div></div>
-        </div>
+        <div class="review-author"><div class="review-avatar">R</div><div><div class="review-name">Rahul Desai</div><div class="review-loc">Mumbai</div></div></div>
         <div class="quote-mark">"</div>
       </div>
-    </div>
-
-    <!-- Nav -->
-    <div class="slider-nav">
-      <button class="slider-btn" id="revPrev"><i class="fa-solid fa-chevron-left"></i></button>
-      <div class="slider-dots" id="revDots"></div>
-      <button class="slider-btn" id="revNext"><i class="fa-solid fa-chevron-right"></i></button>
+      <!-- Duplicate set for seamless loop -->
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">One of the best camping experiences I've had. The tents were cozy, the place was safe, and the team was very helpful throughout our stay.</p>
+        <div class="review-author"><div class="review-avatar">N</div><div><div class="review-name">Neha Patil</div><div class="review-loc">Pune</div></div></div>
+        <div class="quote-mark">"</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Perfect place to relax with friends and family. The staff provided excellent service, and the activities kept us entertained throughout the night.</p>
+        <div class="review-author"><div class="review-avatar">A</div><div><div class="review-name">Arjun Mehta</div><div class="review-loc">Mumbai</div></div></div>
+        <div class="quote-mark">"</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Everything was beyond expectations – food, music, activities, and the overall hospitality. Highly recommended for nature lovers and adventure seekers!</p>
+        <div class="review-author"><div class="review-avatar">K</div><div><div class="review-name">Karan Joshi</div><div class="review-loc">Nashik</div></div></div>
+        <div class="quote-mark">"</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Amazing experience! The lakeside view at night with bonfire and DJ music was absolutely magical. Will definitely come back again!</p>
+        <div class="review-author"><div class="review-avatar">P</div><div><div class="review-name">Priya Sharma</div><div class="review-loc">Pune</div></div></div>
+        <div class="quote-mark">"</div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Great food, great vibes, great people! The cottage was clean and comfortable. Sunrise over the lake was breathtaking. 10/10 recommend!</p>
+        <div class="review-author"><div class="review-avatar">R</div><div><div class="review-name">Rahul Desai</div><div class="review-loc">Mumbai</div></div></div>
+        <div class="quote-mark">"</div>
+      </div>
     </div>
   </div>
 </div>
@@ -1230,8 +1267,8 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <span class="footer-logo-txt">AquaRush Waterpark</span>
-      <p>Enjoy the best Pawna Lake Camping near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities for unforgettable memories.</p>
+      <span class="footer-logo-txt">Sahyadri Camp</span>
+      <p>Enjoy the best Sahyadri Camp near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities for unforgettable memories.</p>
       <div class="footer-socials">
         <a href="#" class="footer-social">f</a>
         <a href="#" class="footer-social">in</a>
@@ -1268,7 +1305,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025, All Rights Reserved. AquaRush Waterpark.</span>
+    <span>© 2025, All Rights Reserved. Sahyadri Camp.</span>
     <span>Made with <i class="fa-solid fa-leaf"></i> for nature lovers</span>
   </div>
 </footer>
@@ -1277,10 +1314,10 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 
 <!-- ABOUT PAGE -->
 <div id="pg-about" class="page">
-  <div class="page-hero" style="background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.55)),url('https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=1400&q=80') center/cover no-repeat;background:linear-gradient(135deg,rgba(46,125,50,0.82) 0%,rgba(27,85,27,0.65) 60%,rgba(0,0,0,0.5) 100%),url('https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=1400&q=80') center/cover no-repeat;">
+  <div class="page-hero" style="background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.50)),url('https://images.unsplash.com/photo-1537225228614-56cc3556d7ed?w=1400&q=80') center/cover no-repeat;">
     <div style="position:relative;z-index:2;max-width:700px;">
       <div class="hero-eyebrow"><i class="fa-solid fa-location-dot"></i> Pawna Dam · Near Lonavala</div>
-      <h1>About <span style="color:#FF9800;">Pawna Lake</span><br>Camping</h1>
+      <h1>About <span style="color:#FF9800;">Sahyadri Camp</span></h1>
       <p>Nestled in the Sahyadri hills, we offer the best lakeside camping experience near Lonavala with cozy stays, delicious food, bonfire, and unforgettable memories.</p>
       <div class="hero-btns" style="justify-content:center;">
         <a href="#" onclick="showPage('services')" class="btn-orange">Our Packages</a>
@@ -1288,7 +1325,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
       </div>
     </div>
     <div style="position:absolute;bottom:0;left:0;width:100%;z-index:3;line-height:0;pointer-events:none;">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;"><path d="M0 43.9999C106.667 43.9999 213.333 7.99994 320 7.99994C426.667 7.99994 533.333 43.9999 640 43.9999C746.667 43.9999 853.333 7.99994 960 7.99994C1066.67 7.99994 1173.33 43.9999 1280 43.9999C1386.67 43.9999 1440 19.0266 1440 9.01329V100H0V43.9999Z" fill="#F1F8E9"/></svg>
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;"><path d="M0 43.9999C106.667 43.9999 213.333 7.99994 320 7.99994C426.667 7.99994 533.333 43.9999 640 43.9999C746.667 43.9999 853.333 7.99994 960 7.99994C1066.67 7.99994 1173.33 43.9999 1280 43.9999C1386.67 43.9999 1440 19.0266 1440 9.01329V100H0V43.9999Z" fill="#f5fbf6"/></svg>
     </div>
   </div>
   <section>
@@ -1299,9 +1336,9 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
       </div>
       <div class="about-text">
         <div class="section-tag">About Us</div>
-        <h2 class="section-title">Welcome to Pawna Lake Camping</h2>
-        <p class="section-sub">Welcome to <strong>Pawna Lake Camping near Lonavala</strong>, your perfect destination for a peaceful yet adventurous lakeside escape. We offer a variety of stays including <strong>Tent Camping, Standard Triangle tents, Cozy Cottages, and Cabin Cottages</strong>, ensuring the best comfort and unique experiences for every traveler.</p>
-        <p class="section-sub" style="margin-top:1rem;">Nestled amidst the Sahyadri hills, our campsite is ideal for families, couples, and groups searching for the <strong>best camping at Pawna Lake</strong> with breathtaking lake views and serene surroundings.</p>
+        <h2 class="section-title">Welcome to Sahyadri Camp</h2>
+        <p class="section-sub">Welcome to <strong>Sahyadri Camp near Lonavala</strong>, your perfect destination for a peaceful yet adventurous lakeside escape. We offer a variety of stays including <strong>Tent Camping, Standard Triangle tents, Cozy Cottages, and Cabin Cottages</strong>, ensuring the best comfort and unique experiences for every traveler.</p>
+        <p class="section-sub" style="margin-top:1rem;">Nestled amidst the Sahyadri hills, our campsite is ideal for families, couples, and groups searching for the <strong>best camping at Sahyadri Camp</strong> with breathtaking lake views and serene surroundings.</p>
         <ul class="about-checks">
           <li>Stunning Lake Views</li><li>All Meals Included</li>
           <li>Bonfire Every Night</li><li>DJ & Live Music</li>
@@ -1317,7 +1354,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
       <div>
         <div class="section-tag">Why Choose Us</div>
         <h2 class="section-title">Get your story ready for campfire storytime.</h2>
-        <p class="section-sub">Experience the best Pawna Lake Camping with cozy stays, tasty food, lakeside views, and exciting activities.</p>
+        <p class="section-sub">Experience the best Sahyadri Camp with cozy stays, tasty food, lakeside views, and exciting activities.</p>
         <div class="why-list">
           <div class="why-item"><div class="why-icon-box">⛺</div><div class="why-text"><h4>Convenient Place</h4><p>Easily accessible from Lonavala, Pune, and Mumbai — perfect weekend getaway.</p></div></div>
           <div class="why-item"><div class="why-icon-box">👥</div><div class="why-text"><h4>Professional Team</h4><p>Dedicated team ensures comfort and safety with expert support and friendly service.</p></div></div>
@@ -1328,18 +1365,18 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   </section>
   <footer>
     <div class="footer-grid">
-      <div class="footer-brand"><span class="footer-logo-txt">Pawna Lake Camping</span><p>Enjoy the best Pawna Lake Camping near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities.</p><div class="footer-socials"><a href="#" class="footer-social">f</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">▶</a></div></div>
+      <div class="footer-brand"><span class="footer-logo-txt">Sahyadri Camp</span><p>Enjoy the best Sahyadri Camp near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities.</p><div class="footer-socials"><a href="#" class="footer-social">f</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">▶</a></div></div>
       <div class="footer-col"><h4>Company</h4><ul><li><a href="#" onclick="showPage('home')">Home</a></li><li><a href="#" onclick="showPage('about')">About Us</a></li><li><a href="#" onclick="showPage('services')">Services</a></li><li><a href="#" onclick="showPage('gallery')">Gallery</a></li><li><a href="#" onclick="showPage('contact')">Contact</a></li></ul></div>
       <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="#" onclick="showPage('services')">Tent Camping</a></li><li><a href="#" onclick="showPage('services')">Standard Triangle</a></li><li><a href="#" onclick="showPage('services')">Cabin Cottage</a></li><li><a href="#" onclick="showPage('services')">Cozy Cottage</a></li></ul></div>
       <div class="footer-col"><h4>Get in Touch</h4><ul><li><a href="#"><i class="fa-solid fa-location-dot"></i> Pawna Dam, Thakursai, MH 410406</a></li><li><a href="mailto:minalavangare2498@gmail.com"><i class="fa-solid fa-envelope"></i> minalavangare2498@gmail.com</a></li><li><a href="tel:+918381056352"><i class="fa-solid fa-phone"></i> +91 83810 56352</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2025 All Rights Reserved. Stay in Pawna Lake.</span><span>Made with <i class="fa-solid fa-leaf"></i> for nature lovers</span></div>
+    <div class="footer-bottom"><span>© 2025 All Rights Reserved. Sahyadri Camp.</span><span>Made with <i class="fa-solid fa-leaf"></i> for nature lovers</span></div>
   </footer>
 </div><!-- end about -->
 
 <!-- SERVICES PAGE -->
 <div id="pg-services" class="page">
-  <div class="page-hero" style="background:linear-gradient(135deg,rgba(46,125,50,0.82) 0%,rgba(27,85,27,0.65) 60%,rgba(0,0,0,0.5) 100%),url('https://images.unsplash.com/photo-1478827387698-1527781a4887?w=1400&q=80') center/cover no-repeat;">
+  <div class="page-hero" style="background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.50)),url('https://images.unsplash.com/photo-1478827387698-1527781a4887?w=1400&q=80') center/cover no-repeat;">
     <div style="position:relative;z-index:2;max-width:700px;">
       <div class="hero-eyebrow"><i class="fa-solid fa-campground"></i> Tent · Cottage · Cabin</div>
       <h1>Our <span style="color:#FF9800;">Services</span> &<br>Packages</h1>
@@ -1364,33 +1401,33 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   </section>
   <footer>
     <div class="footer-grid">
-      <div class="footer-brand"><span class="footer-logo-txt">Pawna Lake Camping</span><p>Enjoy the best Pawna Lake Camping near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities.</p><div class="footer-socials"><a href="#" class="footer-social">f</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">▶</a></div></div>
+      <div class="footer-brand"><span class="footer-logo-txt">Sahyadri Camp</span><p>Enjoy the best Sahyadri Camp near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities.</p><div class="footer-socials"><a href="#" class="footer-social">f</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">▶</a></div></div>
       <div class="footer-col"><h4>Company</h4><ul><li><a href="#" onclick="showPage('home')">Home</a></li><li><a href="#" onclick="showPage('about')">About Us</a></li><li><a href="#" onclick="showPage('services')">Services</a></li><li><a href="#" onclick="showPage('gallery')">Gallery</a></li><li><a href="#" onclick="showPage('contact')">Contact</a></li></ul></div>
       <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="#" onclick="showPage('services')">Tent Camping</a></li><li><a href="#" onclick="showPage('services')">Standard Triangle</a></li><li><a href="#" onclick="showPage('services')">Cabin Cottage</a></li><li><a href="#" onclick="showPage('services')">Cozy Cottage</a></li></ul></div>
       <div class="footer-col"><h4>Get in Touch</h4><ul><li><a href="#"><i class="fa-solid fa-location-dot"></i> Pawna Dam, Thakursai, MH 410406</a></li><li><a href="mailto:minalavangare2498@gmail.com"><i class="fa-solid fa-envelope"></i> minalavangare2498@gmail.com</a></li><li><a href="tel:+918381056352"><i class="fa-solid fa-phone"></i> +91 83810 56352</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2025 All Rights Reserved. Stay in Pawna Lake.</span><span>Made with <i class="fa-solid fa-leaf"></i> for nature lovers</span></div>
+    <div class="footer-bottom"><span>© 2025 All Rights Reserved. Sahyadri Camp.</span><span>Made with <i class="fa-solid fa-leaf"></i> for nature lovers</span></div>
   </footer>
 </div><!-- end services -->
 
 <!-- GALLERY PAGE -->
 <div id="pg-gallery" class="page">
-  <div class="page-hero" style="background:linear-gradient(135deg,rgba(46,125,50,0.82) 0%,rgba(27,85,27,0.65) 60%,rgba(0,0,0,0.5) 100%),url('https://images.unsplash.com/photo-1467173572719-f14b9fb86e5f?w=1400&q=80') center/cover no-repeat;">
+  <div class="page-hero" style="background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.50)),url('https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=1400&q=80') center/cover no-repeat;">
     <div style="position:relative;z-index:2;max-width:700px;">
       <div class="hero-eyebrow"><i class="fa-solid fa-images"></i> Photos · Memories · Moments</div>
       <h1>Our <span style="color:#FF9800;">Gallery</span></h1>
-      <p>Explore beautiful moments captured at Pawna Lake Camping — bonfires, sunsets, food, music, and unforgettable memories with loved ones.</p>
+      <p>Explore beautiful moments captured at Sahyadri Camp — bonfires, sunsets, food, music, and unforgettable memories with loved ones.</p>
       <div class="hero-btns" style="justify-content:center;">
         <a href="#" onclick="showPage('home');setTimeout(()=>document.getElementById('booking').scrollIntoView({behavior:'smooth'}),100)" class="btn-orange"><i class="fa-solid fa-calendar-check"></i> Book Now</a>
         <a href="#" onclick="showPage('contact')" class="btn-outline-white">Contact Us</a>
       </div>
     </div>
     <div style="position:absolute;bottom:0;left:0;width:100%;z-index:3;line-height:0;pointer-events:none;">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;"><path d="M0 43.9999C106.667 43.9999 213.333 7.99994 320 7.99994C426.667 7.99994 533.333 43.9999 640 43.9999C746.667 43.9999 853.333 7.99994 960 7.99994C1066.67 7.99994 1173.33 43.9999 1280 43.9999C1386.67 43.9999 1440 19.0266 1440 9.01329V100H0V43.9999Z" fill="#F1F8E9"/></svg>
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;"><path d="M0 43.9999C106.667 43.9999 213.333 7.99994 320 7.99994C426.667 7.99994 533.333 43.9999 640 43.9999C746.667 43.9999 853.333 7.99994 960 7.99994C1066.67 7.99994 1173.33 43.9999 1280 43.9999C1386.67 43.9999 1440 19.0266 1440 9.01329V100H0V43.9999Z" fill="#f5fbf6"/></svg>
     </div>
   </div>
   <section>
-    <div style="text-align:center;"><div class="section-tag">Our Gallery</div><h2 class="section-title">Moments at Pawna Lake</h2></div>
+    <div style="text-align:center;"><div class="section-tag">Our Gallery</div><h2 class="section-title">Moments at Sahyadri Camp</h2></div>
     <div class="gallery-grid">
       <div class="gallery-item tall"><img src="https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=700&q=80" alt="Camp"></div>
       <div class="gallery-item"><img src="https://images.unsplash.com/photo-1478827387698-1527781a4887?w=600&q=80" alt="Tent"></div>
@@ -1404,35 +1441,65 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   </section>
   <footer>
     <div class="footer-grid">
-      <div class="footer-brand"><span class="footer-logo-txt">Pawna Lake Camping</span><p>Enjoy the best Pawna Lake Camping near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities.</p><div class="footer-socials"><a href="#" class="footer-social">f</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">▶</a></div></div>
+      <div class="footer-brand"><span class="footer-logo-txt">Sahyadri Camp</span><p>Enjoy the best Sahyadri Camp near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities.</p><div class="footer-socials"><a href="#" class="footer-social">f</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">▶</a></div></div>
       <div class="footer-col"><h4>Company</h4><ul><li><a href="#" onclick="showPage('home')">Home</a></li><li><a href="#" onclick="showPage('about')">About Us</a></li><li><a href="#" onclick="showPage('services')">Services</a></li><li><a href="#" onclick="showPage('gallery')">Gallery</a></li><li><a href="#" onclick="showPage('contact')">Contact</a></li></ul></div>
       <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="#" onclick="showPage('services')">Tent Camping</a></li><li><a href="#" onclick="showPage('services')">Standard Triangle</a></li><li><a href="#" onclick="showPage('services')">Cabin Cottage</a></li><li><a href="#" onclick="showPage('services')">Cozy Cottage</a></li></ul></div>
       <div class="footer-col"><h4>Get in Touch</h4><ul><li><a href="#"><i class="fa-solid fa-location-dot"></i> Pawna Dam, Thakursai, MH 410406</a></li><li><a href="mailto:minalavangare2498@gmail.com"><i class="fa-solid fa-envelope"></i> minalavangare2498@gmail.com</a></li><li><a href="tel:+918381056352"><i class="fa-solid fa-phone"></i> +91 83810 56352</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2025 All Rights Reserved. Stay in Pawna Lake.</span><span>Made with <i class="fa-solid fa-leaf"></i> for nature lovers</span></div>
+    <div class="footer-bottom"><span>© 2025 All Rights Reserved. Sahyadri Camp.</span><span>Made with <i class="fa-solid fa-leaf"></i> for nature lovers</span></div>
   </footer>
 </div><!-- end gallery -->
 
 <!-- CONTACT PAGE -->
 <div id="pg-contact" class="page">
-  <div class="page-hero" style="background:linear-gradient(135deg,rgba(46,125,50,0.82) 0%,rgba(27,85,27,0.65) 60%,rgba(0,0,0,0.5) 100%),url('https://images.unsplash.com/photo-1467173572719-f14b9fb86e5f?w=1400&q=80') center/cover no-repeat;">
+  <div class="page-hero" style="background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.50)),url('https://images.unsplash.com/photo-1445308394109-4ec2920981b1?w=1400&q=80') center/cover no-repeat;">
     <div style="position:relative;z-index:2;max-width:700px;">
       <div class="hero-eyebrow"><i class="fa-solid fa-phone"></i> WhatsApp · Call · Email</div>
       <h1>Contact <span style="color:#FF9800;">Us</span></h1>
       <p>Get in touch with us for bookings, package inquiries, or any assistance. We respond within minutes on WhatsApp!</p>
       <div class="hero-btns" style="justify-content:center;">
         <a href="https://wa.me/918381056352" class="btn-orange" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
-        <a href="tel:+918381056352" class="btn-outline-white"><i class="fa-solid fa-phone"></i> Call Us</a>
+
       </div>
     </div>
     <div style="position:absolute;bottom:0;left:0;width:100%;z-index:3;line-height:0;pointer-events:none;">
-      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;"><path d="M0 43.9999C106.667 43.9999 213.333 7.99994 320 7.99994C426.667 7.99994 533.333 43.9999 640 43.9999C746.667 43.9999 853.333 7.99994 960 7.99994C1066.67 7.99994 1173.33 43.9999 1280 43.9999C1386.67 43.9999 1440 19.0266 1440 9.01329V100H0V43.9999Z" fill="#F1F8E9"/></svg>
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;"><path d="M0 43.9999C106.667 43.9999 213.333 7.99994 320 7.99994C426.667 7.99994 533.333 43.9999 640 43.9999C746.667 43.9999 853.333 7.99994 960 7.99994C1066.67 7.99994 1173.33 43.9999 1280 43.9999C1386.67 43.9999 1440 19.0266 1440 9.01329V100H0V43.9999Z" fill="#f5fbf6"/></svg>
     </div>
   </div>
-  <section>
-    <div style="text-align:center;"><div class="section-tag">Find Us</div><h2 class="section-title">Our Contact Information</h2></div>
+  <section style="padding:4rem 4% 5rem;">
+    <div style="width:100%;text-align:center;margin-bottom:3rem;">
+      <span style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#FF9800;display:block;margin-bottom:0.5rem;">Find Us</span>
+      <h2 style="font-family:'Merriweather',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:#1B1B1B;display:block;margin-bottom:0.75rem;">Our Contact Information</h2>
+      <p style="color:#888;font-size:0.95rem;display:block;max-width:480px;margin:0 auto;">Reach out anytime via WhatsApp, call, or email. We respond within minutes!</p>
+    </div>
     <div class="contact-form-wrap">
-      <div class="cf-card" data-aos="fade-right">
+      <div class="cf-card">
+        <h2>Send Us a Message</h2>
+        <p>Fill in your details and we'll get back to you on WhatsApp within minutes!</p>
+        <div class="cf-row">
+          <div class="cf-group"><label>Full Name</label><input type="text" placeholder="e.g. Rahul Sharma"></div>
+          <div class="cf-group"><label>Phone Number</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div>
+        </div>
+        <div class="cf-row">
+          <div class="cf-group"><label>Check-in Date</label><input type="date"></div>
+          <div class="cf-group"><label>Package</label><select><option value="">Select Package</option><option>Tent Camping – ₹999</option><option>Standard Triangle – ₹1499</option><option>Cabin Cottage – ₹1699</option><option>Cozy Cottage – ₹2499</option></select></div>
+        </div>
+        <div class="cf-group"><label>No. of People</label><input type="number" placeholder="e.g. 4" min="1"></div>
+        <div class="cf-group"><label>Message (Optional)</label><textarea rows="3" placeholder="Any special requests..."></textarea></div>
+        <button class="btn-cf" onclick="sendContact()"><i class="fa-brands fa-whatsapp"></i> Send via WhatsApp</button>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.5rem;">
+        <div class="ci-card"><div class="ci-icon-box"><i class="fa-solid fa-location-dot"></i></div><div><div class="ci-label">Location</div><div class="ci-value">Pawna Dam, Gevhande Khadak, Thakursai, Maharashtra 410406</div></div></div>
+        <div class="ci-card"><div class="ci-icon-box"><i class="fa-solid fa-phone"></i></div><div><div class="ci-label">Phone / WhatsApp</div><div class="ci-value"><a href="tel:+918381056352">+91 83810 56352</a></div></div></div>
+        <div class="ci-card"><div class="ci-icon-box"><i class="fa-solid fa-envelope"></i></div><div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:minalavangare2498@gmail.com">minalavangare2498@gmail.com</a></div></div></div>
+        <div style="background:var(--green-dark);border-radius:var(--radius);padding:1.5rem;color:white;">
+          <div style="font-size:0.75rem;font-weight:800;letter-spacing:0.15em;text-transform:uppercase;color:#FFE082;margin-bottom:0.75rem;">Timings</div>
+          <div style="font-size:0.92rem;line-height:2;">Check-in: <strong>4:00 PM</strong><br>Check-out: <strong>11:00 AM</strong><br>Support: <strong>24/7 Available</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+      <div class="cf-card">
         <h2>Send Us a Message</h2>
         <p>Fill in your details and we’ll get back to you on WhatsApp within minutes!</p>
         <div class="cf-row">
@@ -1460,12 +1527,12 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   </section>
   <footer>
     <div class="footer-grid">
-      <div class="footer-brand"><span class="footer-logo-txt">Pawna Lake Camping</span><p>Enjoy the best Pawna Lake Camping near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities.</p><div class="footer-socials"><a href="#" class="footer-social">f</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">▶</a></div></div>
+      <div class="footer-brand"><span class="footer-logo-txt">Sahyadri Camp</span><p>Enjoy the best Sahyadri Camp near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities.</p><div class="footer-socials"><a href="#" class="footer-social">f</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">▶</a></div></div>
       <div class="footer-col"><h4>Company</h4><ul><li><a href="#" onclick="showPage('home')">Home</a></li><li><a href="#" onclick="showPage('about')">About Us</a></li><li><a href="#" onclick="showPage('services')">Services</a></li><li><a href="#" onclick="showPage('gallery')">Gallery</a></li><li><a href="#" onclick="showPage('contact')">Contact</a></li></ul></div>
       <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="#" onclick="showPage('services')">Tent Camping</a></li><li><a href="#" onclick="showPage('services')">Standard Triangle</a></li><li><a href="#" onclick="showPage('services')">Cabin Cottage</a></li><li><a href="#" onclick="showPage('services')">Cozy Cottage</a></li></ul></div>
       <div class="footer-col"><h4>Get in Touch</h4><ul><li><a href="#"><i class="fa-solid fa-location-dot"></i> Pawna Dam, Thakursai, MH 410406</a></li><li><a href="mailto:minalavangare2498@gmail.com"><i class="fa-solid fa-envelope"></i> minalavangare2498@gmail.com</a></li><li><a href="tel:+918381056352"><i class="fa-solid fa-phone"></i> +91 83810 56352</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2025 All Rights Reserved. Stay in Pawna Lake.</span><span>Made with <i class="fa-solid fa-leaf"></i> for nature lovers</span></div>
+    <div class="footer-bottom"><span>© 2025 All Rights Reserved. Sahyadri Camp.</span><span>Made with <i class="fa-solid fa-leaf"></i> for nature lovers</span></div>
   </footer>
 </div><!-- end contact -->
 
@@ -1519,29 +1586,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 
-// Testimonials Slider
-(function(){
-  const track = document.getElementById('testiTrack');
-  const dotsWrap = document.getElementById('testiDots');
-  if(!track) return;
-  const cards = track.querySelectorAll('.review-card');
-  const total = Math.ceil(cards.length/3);
-  let cur=0;
-  for(let i=0;i<total;i++){const d=document.createElement('button');d.className='testi-dot'+(i===0?' active':'');d.onclick=()=>go(i);dotsWrap.appendChild(d);}
-  function go(n){cur=(n+total)%total;const w=track.parentElement.offsetWidth;track.style.transform=`translateX(-${cur*w}px)`;document.querySelectorAll('.testi-dot').forEach((d,i)=>d.classList.toggle('active',i===cur));}
-  window.testiNext=()=>go(cur+1);
-  window.testiPrev=()=>go(cur-1);
-  setInterval(()=>window.testiNext(),3500);
-})();
-
-// Scroll reveal AOS
-const aosObserver = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting) e.target.classList.add('aos-animate');
-  });
-},{threshold:0.12});
-document.querySelectorAll('[data-aos]').forEach(el=>aosObserver.observe(el));
-
 // Scroll reveal
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
@@ -1551,7 +1595,7 @@ const observer=new IntersectionObserver(entries=>{
     }
   });
 },{threshold:0.1});
-document.querySelectorAll('.service-card,.act-card,.review-card,.why-item,.sched-item,.faq-item').forEach(el=>{
+document.querySelectorAll('.service-card,.why-item,.sched-item,.faq-item').forEach(el=>{
   el.style.opacity='0';
   el.style.transform='translateY(24px)';
   el.style.transition='opacity 0.6s ease, transform 0.6s ease';
