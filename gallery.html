@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery – Pawna Lake Camping</title>
+<title>Gallery – Sahyadri Camp</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Merriweather:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
@@ -14,7 +14,7 @@
   <div class="nav-logo">
     <div class="nav-logo-icon">PL</div>
     <div class="nav-logo-text">
-      <div class="nav-logo-title">Pawna Lake Camping</div>
+      <div class="nav-logo-title">Sahyadri Camp</div>
       <div class="nav-logo-sub">Near Lonavala</div>
     </div>
   </div>
@@ -24,10 +24,10 @@
     <li class="dropdown">
       <a href="services.html">Our Services ▾</a>
       <div class="dropdown-menu">
-        <a href="services.html">Tent Camping</a>
-        <a href="services.html">Standard Triangle</a>
-        <a href="services.html">Cabin Cottage</a>
-        <a href="services.html">Cozy Cottage</a>
+        <a href="tent-camping.html">Tent Camping</a>
+        <a href="standard-triangle.html">Standard Triangle</a>
+        <a href="cabin-cottage.html">Cabin Cottage</a>
+        <a href="cozy-cottage.html">Cozy Cottage</a>
       </div>
     </li>
     <li><a href="gallery.html" class="active">Gallery</a></li>
@@ -37,14 +37,33 @@
 </nav>
 
 <!-- HERO -->
-<div class="page-hero" style="background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1400&q=80') center/cover no-repeat;">
-  <div style="position:relative;z-index:2;max-width:700px;">
-    <div class="hero-eyebrow"><i class="fa-solid fa-camera"></i> Real Moments · Real Memories</div>
-    <h1>Memories That<br>Last <span style="color:#FF9800;">Forever</span></h1>
-    <p>Bonfires under the stars, golden sunsets over the lake, laughter with loved ones — every frame tells a story at Pawna Lake Camping.</p>
-    <div class="hero-btns">
-      <a href="index.html#booking" class="btn-orange"><i class="fa-solid fa-calendar-check"></i> Create Yours</a>
-      <a href="contact.html" class="btn-outline-white">Contact Us</a>
+<div class="page-hero" style="background:linear-gradient(to right, rgba(15,35,20,0.85), rgba(15,35,20,0.3)),url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1600&q=80') center/cover no-repeat; text-align: left; padding: 160px 4% 180px;">
+  <div style="position:relative;z-index:2;max-width:700px;width:100%;display:flex;flex-direction:column;align-items:flex-start;">
+    <div class="hero-eyebrow" style="background: rgba(255,152,0,0.15); border: 1px solid rgba(255,152,0,0.4); color: #FFB74D; box-shadow: 0 0 20px rgba(255,152,0,0.2);">
+      <i class="fa-solid fa-star"></i> Explore The Unseen
+    </div>
+    <h1 style="font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 1.2rem; text-transform: none; text-align: left;">
+      Discover The<br>
+      <span style="color: transparent; -webkit-text-stroke: 1.5px #fff; opacity: 0.9;">Wild</span> 
+      <span style="color:#FF9800; font-style: italic;">Beauty</span>
+    </h1>
+    <p style="font-size: 1.1rem; line-height: 1.8; color: #d4e2d8; margin-bottom: 2.2rem; text-align: left;">
+      Step out of the city and into nature's embrace. Experience stargazing, endless bonfires, and the tranquil waters of Pawna Lake.
+    </p>
+    <div class="hero-btns" style="justify-content: flex-start; gap: 1.2rem;">
+      <a href="index.html#booking" class="btn-orange" style="padding: 16px 32px;"><i class="fa-solid fa-tent"></i> Book A Tent</a>
+      <a href="#gallery" class="btn-outline-white" style="padding: 16px 32px;"><i class="fa-solid fa-images"></i> See Gallery</a>
+    </div>
+    
+    <div style="display: flex; gap: 1.5rem; margin-top: 3.5rem; animation: fadeUp 0.7s 0.5s ease both;">
+      <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 1rem 1.5rem; border-radius: 16px; backdrop-filter: blur(12px);">
+        <div style="font-size: 1.7rem; font-weight: 900; color: #fff; line-height: 1;">4.9<i class="fa-solid fa-star" style="font-size:1rem; color:#FF9800; margin-left:6px;"></i></div>
+        <div style="font-size: 0.75rem; color: #e2ede6; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 6px; font-weight: 700;">User Rating</div>
+      </div>
+      <div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 1rem 1.5rem; border-radius: 16px; backdrop-filter: blur(12px);">
+        <div style="font-size: 1.7rem; font-weight: 900; color: #fff; line-height: 1;">8k+</div>
+        <div style="font-size: 0.75rem; color: #e2ede6; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 6px; font-weight: 700;">Happy Campers</div>
+      </div>
     </div>
   </div>
   <div style="position:absolute;bottom:0;left:0;width:100%;z-index:3;line-height:0;pointer-events:none;">
@@ -53,29 +72,128 @@
 </div>
 
 <!-- GALLERY -->
-<section>
-  <div style="text-align:center;"><div class="section-tag">Our Gallery</div><h2 class="section-title">Moments at Pawna Lake</h2></div>
+<section id="gallery" style="padding: 3rem 0 6rem; background: var(--bg);">
+  <div style="text-align:center;"><div class="section-tag">Captured Memories</div><h2 class="section-title">The Pawna Lake Experience</h2></div>
   <div class="gallery-grid">
-    <div class="gallery-item tall"><img src="https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=700&q=80" alt="Camp"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1478827387698-1527781a4887?w=600&q=80" alt="Tent"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1467173572719-f14b9fb86e5f?w=600&q=80" alt="Bonfire"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80" alt="Sunset"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1613559806989-09f3be78e3dd?w=600&q=80" alt="Cottage"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&q=80" alt="Music"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Food"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80" alt="Nature"></div>
+    <!-- Item 1 -->
+    <div class="gallery-item span-2-row">
+      <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=1000&q=80" alt="Lakeside Tent Setup">
+      <div class="gallery-overlay">
+        <div class="gallery-info">
+          <span class="gallery-tag">Stay</span>
+          <h3 class="gallery-title">Lakeside Tents</h3>
+          <p class="gallery-desc">Wake up to the gentle sound of water right outside your premium tent.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1478827387698-1527781a4887?w=1000&q=80" alt="Golden Sunset">
+      <div class="gallery-overlay">
+        <div class="gallery-info">
+          <span class="gallery-tag">Nature</span>
+          <h3 class="gallery-title">Golden Sunsets</h3>
+          <p class="gallery-desc">Experience breathtaking twilight views over the reservoir.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="gallery-item span-2-col">
+      <img src="https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?w=1000&q=80" alt="Friends Bonfire at Night">
+      <div class="gallery-overlay">
+        <div class="gallery-info">
+          <span class="gallery-tag">Memories</span>
+          <h3 class="gallery-title">Bonfire Nights</h3>
+          <p class="gallery-desc">Cozy up around the warmth, sharing stories under the stars.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 4 -->
+    <div class="gallery-item span-2-col">
+      <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1000&q=80" alt="Cozy Cabin Interior">
+      <div class="gallery-overlay">
+        <div class="gallery-info">
+          <span class="gallery-tag">Premium</span>
+          <h3 class="gallery-title">Cozy Setup</h3>
+          <p class="gallery-desc">Upgrade your stay with fully equipped, comfortable aesthetics.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 5 -->
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1520116468816-95b69f847357?w=1000&q=80" alt="BBQ Dinner">
+      <div class="gallery-overlay">
+        <div class="gallery-info">
+          <span class="gallery-tag">Food</span>
+          <h3 class="gallery-title">Unlimited BBQ</h3>
+          <p class="gallery-desc">Relish mouth-watering, perfectly grilled smoky BBQ.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 6 -->
+    <div class="gallery-item span-2-row">
+      <img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?w=1000&q=80" alt="Stargazing">
+      <div class="gallery-overlay">
+        <div class="gallery-info">
+          <span class="gallery-tag">Nightlife</span>
+          <h3 class="gallery-title">Stargazing</h3>
+          <p class="gallery-desc">Lie back and watch the clear, star-studded sky away from the city.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 7 -->
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1517823382935-51bfcb0ec6bc?w=1000&q=80" alt="Live Music">
+      <div class="gallery-overlay">
+        <div class="gallery-info">
+          <span class="gallery-tag">Vibe</span>
+          <h3 class="gallery-title">Friends Forever</h3>
+          <p class="gallery-desc">Sing along and enjoy memorable moments with your friends by the campfire.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 8 -->
+    <div class="gallery-item span-2-col">
+      <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1000&q=80" alt="Kayaking and Boating">
+      <div class="gallery-overlay">
+        <div class="gallery-info">
+          <span class="gallery-tag">Adventure</span>
+          <h3 class="gallery-title">Lake View</h3>
+          <p class="gallery-desc">Enjoy the serene morning waters of Pawna.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 9 (New) -->
+    <div class="gallery-item span-3-col">
+      <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1400&q=80" alt="Lush Green surroundings">
+      <div class="gallery-overlay">
+        <div class="gallery-info">
+          <span class="gallery-tag">Explore</span>
+          <h3 class="gallery-title">Nature Trails</h3>
+          <p class="gallery-desc">Discover the lush greenery and beautiful hiking trails around Pawna Dam.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-grid">
-    <div class="footer-brand"><span class="footer-logo-txt">Pawna Lake Camping</span><p>Enjoy the best Pawna Lake Camping near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities.</p><div class="footer-socials"><a href="#" class="footer-social">f</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">▶</a></div></div>
+    <div class="footer-brand"><span class="footer-logo-txt">Sahyadri Camp</span><p>Enjoy the best Sahyadri Camp near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities.</p><div class="footer-socials"><a href="#" class="footer-social">f</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">▶</a></div></div>
     <div class="footer-col"><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="services.html">Tent Camping</a></li><li><a href="services.html">Standard Triangle</a></li><li><a href="services.html">Cabin Cottage</a></li><li><a href="services.html">Cozy Cottage</a></li></ul></div>
+    <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="tent-camping.html">Tent Camping</a></li><li><a href="standard-triangle.html">Standard Triangle</a></li><li><a href="cabin-cottage.html">Cabin Cottage</a></li><li><a href="cozy-cottage.html">Cozy Cottage</a></li></ul></div>
     <div class="footer-col"><h4>Get in Touch</h4><ul><li><a href="#"><i class="fa-solid fa-location-dot"></i> Pawna Dam, Thakursai, MH 410406</a></li><li><a href="mailto:minalavangare2498@gmail.com"><i class="fa-solid fa-envelope"></i> minalavangare2498@gmail.com</a></li><li><a href="tel:+918381056352"><i class="fa-solid fa-phone"></i> +91 83810 56352</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><span>© 2025 All Rights Reserved. Stay in Pawna Lake.</span><span>Made with <i class="fa-solid fa-leaf"></i> for nature lovers</span></div>
+  <div class="footer-bottom"><span>© 2025 All Rights Reserved. Stay in Pawna Lake.</span><span>Made with <i class="fa-solid fa-leaf"></i> by Webcultivate</span></div>
 </footer>
 
 <div class="float-btns">

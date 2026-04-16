@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us – Pawna Lake Camping</title>
+<title>Contact Us – Sahyadri Camp</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Merriweather:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
@@ -14,7 +14,7 @@
   <div class="nav-logo">
     <div class="nav-logo-icon">PL</div>
     <div class="nav-logo-text">
-      <div class="nav-logo-title">Pawna Lake Camping</div>
+      <div class="nav-logo-title">Sahyadri Camp</div>
       <div class="nav-logo-sub">Near Lonavala</div>
     </div>
   </div>
@@ -24,10 +24,10 @@
     <li class="dropdown">
       <a href="services.html">Our Services ▾</a>
       <div class="dropdown-menu">
-        <a href="services.html">Tent Camping</a>
-        <a href="services.html">Standard Triangle</a>
-        <a href="services.html">Cabin Cottage</a>
-        <a href="services.html">Cozy Cottage</a>
+        <a href="tent-camping.html">Tent Camping</a>
+        <a href="standard-triangle.html">Standard Triangle</a>
+        <a href="cabin-cottage.html">Cabin Cottage</a>
+        <a href="cozy-cottage.html">Cozy Cottage</a>
       </div>
     </li>
     <li><a href="gallery.html">Gallery</a></li>
@@ -37,65 +37,145 @@
 </nav>
 
 <!-- HERO -->
-<div class="page-hero" style="background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1400&q=80') center/cover no-repeat;">
-  <div style="position:relative;z-index:2;max-width:700px;">
-    <div class="hero-eyebrow"><i class="fa-brands fa-whatsapp"></i> Reply within minutes</div>
-    <h1>We're Here<br>to <span style="color:#FF9800;">Help You</span></h1>
-    <p>Have questions about packages, availability or anything else? Reach out — our friendly team is always ready to assist you.</p>
-    <div class="hero-btns">
-      <a href="https://wa.me/918381056352" class="btn-orange" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
-      <a href="tel:+918381056352" class="btn-outline-white"><i class="fa-solid fa-phone"></i> Call Now</a>
-    </div>
+<div class="page-hero" style="background:linear-gradient(135deg, rgba(0, 15, 5, 0.75) 0%, rgba(20, 45, 20, 0.4) 100%),url('https://images.unsplash.com/photo-1537225228614-56cc3556d7ed?w=1600&q=80') center/cover no-repeat; padding: 160px 4% 180px;">
+  <div style="position:relative;z-index:2;max-width:800px;text-align:center;margin:0 auto;display:flex;flex-direction:column;align-items:center;">
+    <div class="hero-eyebrow" data-aos="fade-down" style="background: rgba(244, 160, 37, 0.2); border: 1px solid #F4A025; color: #F4A025; padding: 6px 16px; border-radius: 30px; font-weight: 700; margin-bottom: 20px; font-size: 0.9rem;"><i class="fa-solid fa-headset"></i> 24/7 Support Available</div>
+    <h1 style="font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 1.2rem; text-transform: none; color: white;" data-aos="fade-up" data-aos-delay="100">
+      Help Us Plan Your<br>
+      <span style="color: transparent; -webkit-text-stroke: 1.5px #fff; opacity: 0.9;">Perfect</span> 
+      <span style="color:#FF9800; font-style: italic;">Escape</span>
+    </h1>
+    <p style="max-width:600px; margin:20px auto 0; font-size:1.15rem; color:rgba(255,255,255,0.9);" data-aos="fade-up" data-aos-delay="200">Our dedicated team is here to help you craft an unforgettable lakeside experience. Reach out anytime!</p>
   </div>
   <div style="position:absolute;bottom:0;left:0;width:100%;z-index:3;line-height:0;pointer-events:none;">
-    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;"><path d="M0 43.9999C106.667 43.9999 213.333 7.99994 320 7.99994C426.667 7.99994 533.333 43.9999 640 43.9999C746.667 43.9999 853.333 7.99994 960 7.99994C1066.67 7.99994 1173.33 43.9999 1280 43.9999C1386.67 43.9999 1440 19.0266 1440 9.01329V100H0V43.9999Z" fill="#f5fbf6"/></svg>
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:100px;">
+      <path d="M0 120L1440 120L1440 0C1440 0 1009.68 88.0815 720 88.0815C430.316 88.0815 0 0 0 0L0 120Z" fill="#f5fbf6"/>
+    </svg>
   </div>
 </div>
 
-<!-- CONTACT FORM + INFO -->
-<section>
+<!-- CONTACT SECTION -->
+<section style="margin-top:-80px; position:relative; z-index:10; padding-top:0;">
   <div class="contact-form-wrap">
-    <div class="cf-card" data-aos="fade-right">
-      <h2>Send Us a Message</h2>
-      <p>Fill in your details and we'll get back to you on WhatsApp within minutes!</p>
-      <div class="cf-row">
-        <div class="cf-group"><label>Full Name</label><input type="text" placeholder="e.g. Rahul Sharma"></div>
-        <div class="cf-group"><label>Phone Number</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div>
+    
+    <!-- LEFT: CONTACT INFO -->
+    <div class="contact-info-col" data-aos="fade-right">
+      <div class="section-tag">Get in Touch</div>
+      <h2 style="font-family:'Merriweather',serif; font-size:clamp(1.8rem, 3vw, 2.5rem); margin-bottom:1rem; color:var(--text);">We'd Love to <br>Hear From You</h2>
+      <p style="color:var(--text-muted); font-size:1.05rem; line-height:1.7; margin-bottom:2.5rem;">Whether you want to book a stay, plan a corporate outing, or just have a quick question, our friendly team responds within minutes.</p>
+      
+      <div class="ci-cards-list">
+        <div class="ci-card premium-card">
+          <div class="ci-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <div class="ci-label">Camping Location</div>
+            <div class="ci-value">Pawna Dam, Gevhande Khadak,<br> Thakursai, Maharashtra 410406</div>
+          </div>
+        </div>
+        <div class="ci-card premium-card">
+          <div class="ci-icon-box"><i class="fa-brands fa-whatsapp" style="font-size:1.4rem;"></i></div>
+          <div>
+            <div class="ci-label">Call / WhatsApp (24/7)</div>
+            <div class="ci-value"><a href="tel:+918381056352" style="font-size:1.1rem; color:var(--green-dark);">+91 83810 56352</a></div>
+          </div>
+        </div>
+        <div class="ci-card premium-card">
+          <div class="ci-icon-box" style="background:linear-gradient(135deg, #F4A025, #E08B10);"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <div class="ci-label">Email Address</div>
+            <div class="ci-value"><a href="mailto:minalavangare2498@gmail.com">minalavangare2498@gmail.com</a></div>
+          </div>
+        </div>
       </div>
-      <div class="cf-row">
-        <div class="cf-group"><label>Check-in Date</label><input type="date"></div>
-        <div class="cf-group"><label>Package</label><select><option value="">Select Package</option><option>Tent Camping – ₹999</option><option>Standard Triangle – ₹1499</option><option>Cabin Cottage – ₹1699</option><option>Cozy Cottage – ₹2499</option></select></div>
+      
+      <div class="timing-card mt-4">
+        <div class="timing-header">
+          <i class="fa-regular fa-clock"></i> Timings & Rules
+        </div>
+        <div class="timing-body">
+          <div class="time-item"><span>Check-in</span> <strong>4:00 PM</strong></div>
+          <div class="time-item"><span>Check-out</span> <strong>11:00 AM</strong></div>
+          <div class="time-item"><span>Music Off</span> <strong>12:00 AM</strong></div>
+        </div>
       </div>
-      <div class="cf-group"><label>No. of People</label><input type="number" placeholder="e.g. 4" min="1"></div>
-      <div class="cf-group"><label>Message (Optional)</label><textarea rows="4" placeholder="Any special requests..."></textarea></div>
-      <button class="btn-cf" onclick="sendContact()"><i class="fa-brands fa-whatsapp"></i> Send via WhatsApp</button>
     </div>
-    <div style="display:flex;flex-direction:column;gap:1.5rem;" data-aos="fade-left">
-      <div>
-        <div class="section-tag">Find Us</div>
-        
-        <p class="section-sub">Reach out anytime via WhatsApp, call, or email. We respond within minutes!</p>
+
+    <!-- RIGHT: CONTACT FORM -->
+    <div class="cf-card-new" data-aos="fade-left">
+      <div class="cf-badge">Quick Booking Inquiry</div>
+      <h3>Send Us a Message</h3>
+      <p class="cf-subtitle">Fill out the form below and we'll reply directly on WhatsApp almost instantly.</p>
+      
+      <div class="cf-row">
+        <div class="cf-group-float">
+          <input type="text" id="name" placeholder=" " required>
+          <label for="name">Full Name</label>
+          <i class="fa-regular fa-user input-icon"></i>
+        </div>
+        <div class="cf-group-float">
+          <input type="tel" id="phone" placeholder=" " required>
+          <label for="phone">Phone Number</label>
+          <i class="fa-solid fa-phone input-icon"></i>
+        </div>
       </div>
-      <div class="ci-card"><div class="ci-icon-box"><i class="fa-solid fa-location-dot"></i></div><div><div class="ci-label">Location</div><div class="ci-value">Pawna Dam, Gevhande Khadak, Thakursai, Maharashtra 410406</div></div></div>
-      <div class="ci-card"><div class="ci-icon-box"><i class="fa-solid fa-phone"></i></div><div><div class="ci-label">Phone / WhatsApp</div><div class="ci-value"><a href="tel:+918381056352">+91 83810 56352</a></div></div></div>
-      <div class="ci-card"><div class="ci-icon-box"><i class="fa-solid fa-envelope"></i></div><div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:minalavangare2498@gmail.com">minalavangare2498@gmail.com</a></div></div></div>
-      <div style="background:var(--green-dark);border-radius:var(--radius);padding:1.5rem;color:white;">
-        <div style="font-size:0.75rem;font-weight:800;letter-spacing:0.15em;text-transform:uppercase;color:#FFE082;margin-bottom:0.75rem;">Timings</div>
-        <div style="font-size:0.92rem;line-height:2;">Check-in: <strong>4:00 PM</strong><br>Check-out: <strong>11:00 AM</strong><br>Support: <strong>24/7 Available</strong></div>
+      
+      <div class="cf-row">
+        <div class="cf-group-float">
+          <input type="date" id="date" placeholder=" " required>
+          <label for="date" class="active-label">Check-in Date</label>
+        </div>
+        <div class="cf-group-float">
+          <select id="package" required>
+            <option value="" disabled selected hidden></option>
+            <option>Tent Camping – ₹999</option>
+            <option>Standard Triangle – ₹1499</option>
+            <option>Cabin Cottage – ₹1699</option>
+            <option>Cozy Cottage – ₹2499</option>
+          </select>
+          <label for="package" class="active-label">Select Package</label>
+          <i class="fa-solid fa-campground input-icon"></i>
+        </div>
+      </div>
+      
+      <div class="cf-group-float">
+        <input type="number" id="people" placeholder=" " min="1" required>
+        <label for="people">Number of Guests</label>
+        <i class="fa-solid fa-user-group input-icon"></i>
+      </div>
+      
+      <div class="cf-group-float">
+        <textarea id="message" rows="3" placeholder=" "></textarea>
+        <label for="message">Special Requests (Optional)</label>
+      </div>
+      
+      <button class="btn-cf-epic" onclick="sendContact()">
+        <span class="btn-cf-text">Send Enquiry on WhatsApp</span>
+        <span class="btn-cf-icon"><i class="fa-brands fa-whatsapp"></i></span>
+      </button>
+      <div class="form-secure">
+        <i class="fa-solid fa-shield-halved"></i> Your information is 100% secure and will never be shared.
       </div>
     </div>
+
+  </div>
+</section>
+
+<!-- MAP SECTION -->
+<section style="padding-top:0;">
+  <div data-aos="zoom-in" style="max-width:1200px; margin:0 auto; border-radius:24px; overflow:hidden; box-shadow:0 20px 40px rgba(0,0,0,0.08); border:8px solid white;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121045.195029304!2d73.40798958223637!3d18.665790435137837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be80f94f923b719%3A0x6bba847c20adac!2sPawna%20Lake!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="450" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-grid">
-    <div class="footer-brand"><span class="footer-logo-txt">Pawna Lake Camping</span><p>Enjoy the best Pawna Lake Camping near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities.</p><div class="footer-socials"><a href="#" class="footer-social">f</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">▶</a></div></div>
+    <div class="footer-brand"><span class="footer-logo-txt">Sahyadri Camp</span><p>Enjoy the best Sahyadri Camp near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities.</p><div class="footer-socials"><a href="#" class="footer-social">f</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">▶</a></div></div>
     <div class="footer-col"><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="services.html">Tent Camping</a></li><li><a href="services.html">Standard Triangle</a></li><li><a href="services.html">Cabin Cottage</a></li><li><a href="services.html">Cozy Cottage</a></li></ul></div>
+    <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="tent-camping.html">Tent Camping</a></li><li><a href="standard-triangle.html">Standard Triangle</a></li><li><a href="cabin-cottage.html">Cabin Cottage</a></li><li><a href="cozy-cottage.html">Cozy Cottage</a></li></ul></div>
     <div class="footer-col"><h4>Get in Touch</h4><ul><li><a href="#"><i class="fa-solid fa-location-dot"></i> Pawna Dam, Thakursai, MH 410406</a></li><li><a href="mailto:minalavangare2498@gmail.com"><i class="fa-solid fa-envelope"></i> minalavangare2498@gmail.com</a></li><li><a href="tel:+918381056352"><i class="fa-solid fa-phone"></i> +91 83810 56352</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><span>© 2025 All Rights Reserved. Stay in Pawna Lake.</span><span>Made with <i class="fa-solid fa-leaf"></i> for nature lovers</span></div>
+  <div class="footer-bottom"><span>© 2025 All Rights Reserved. Stay in Pawna Lake.</span><span>Made with <i class="fa-solid fa-leaf"></i> by Webcultivate</span></div>
 </footer>
 
 <div class="float-btns">
@@ -105,12 +185,13 @@
 
 <script>
 function sendContact(){
-  const card = document.querySelector('.cf-card');
-  const name = card.querySelector('input[type="text"]').value||'Guest';
-  const phone = card.querySelector('input[type="tel"]').value||'';
-  const pkg = card.querySelector('select').value||'';
-  const msg = card.querySelector('textarea').value||'';
-  window.open('https://wa.me/918381056352?text='+encodeURIComponent(`Hi! Enquiry:\n*Name:* ${name}\n*Phone:* ${phone}\n*Package:* ${pkg}\n*Message:* ${msg}`),'_blank');
+  const name = document.getElementById('name').value||'Guest';
+  const phone = document.getElementById('phone').value||'';
+  const date = document.getElementById('date').value||'';
+  const pkg = document.getElementById('package').value||'';
+  const people = document.getElementById('people').value||'';
+  const msg = document.getElementById('message').value||'';
+  window.open('https://wa.me/918381056352?text='+encodeURIComponent(`Hi! New Enquiry:\n*Name:* ${name}\n*Phone:* ${phone}\n*Date:* ${date}\n*Package:* ${pkg}\n*Guests:* ${people}\n*Message:* ${msg}`),'_blank');
 }
 const aosObs = new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('aos-animate');});},{threshold:0.12});
 document.querySelectorAll('[data-aos]').forEach(el=>aosObs.observe(el));

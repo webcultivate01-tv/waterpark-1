@@ -211,91 +211,133 @@ section{padding:5rem 4%;}
 .about-checks li::before{content:'✔';color:var(--green-dark);font-size:0.75rem;}
 
 /* ===== SCHEDULE ===== */
-.schedule-bg{
-  background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
-    url('https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=1400&q=80') center/cover no-repeat;
-  padding:3.5rem 4% 100px;
-  position:relative;
-  text-align:center;
+.schedule-bg {
+  background: linear-gradient(rgba(10,25,15,0.88), rgba(10,25,15,0.96)),
+    url('https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=1600&q=80') center/cover fixed;
+  padding: 6rem 4% 120px;
+  position: relative;
+  overflow: hidden;
 }
-.schedule-title-main{
-  font-family:'Merriweather',serif;
-  font-size:clamp(1.6rem,3vw,2.4rem);
-  color:#fff;font-weight:700;
-  text-transform:uppercase;letter-spacing:0.08em;
-  margin-bottom:0.2rem;
+.schedule-title-main {
+  font-family: 'Merriweather', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
 }
-.schedule-title-sub{
-  font-size:0.78rem;font-weight:700;
-  color:rgba(255,255,255,0.55);
-  letter-spacing:0.35em;text-transform:uppercase;
-  margin-bottom:2.5rem;display:block;
+.schedule-title-sub {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--orange);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 3.5rem;
+  display: block;
 }
-.schedule-timeline{
-  max-width:1000px;
-  margin:0 auto;
-  position:relative;
+.modern-timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
 }
-.sched-track{
-  display:flex;align-items:flex-end;justify-content:space-between;
-  position:relative;gap:0;
-  padding-bottom:0;
+.modern-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, rgba(255,152,0,0.5), transparent);
+  transform: translateX(-50%);
 }
-/* timeline line sits between icon bottom and label top */
-.sched-track::before{
-  content:'';position:absolute;
-  top:68px;left:35px;right:35px;height:5px;
-  background:linear-gradient(to right,#4CAF50,#8BC34A,#FFEB3B,#FF9800,#F44336,#E91E63,#9C27B0,#2196F3,#4CAF50);
-  border-radius:3px;z-index:0;
+.mt-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+  width: 100%;
 }
-.sched-item{
-  display:flex;flex-direction:column;align-items:center;
-  gap:8px;flex:1;position:relative;z-index:1;
+.mt-item:nth-child(even) {
+  flex-direction: row-reverse;
 }
-/* icon ABOVE the line */
-.sched-icon{
-  width:72px;height:72px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  background:white;
-  box-shadow:0 4px 18px rgba(0,0,0,0.3);
-  transition:transform 0.3s;cursor:default;
-  overflow:hidden;padding:0;
-  position:relative;z-index:2;
+.mt-content {
+  width: 45%;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.8rem;
+  border-radius: 16px;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
 }
-.sched-icon img{width:100%;height:100%;object-fit:cover;}
-.sched-icon:hover{transform:scale(1.12);}
-/* label chip BELOW the line */
-.sched-label{
-  background:var(--green-dark);color:white;
-  padding:5px 10px;border-radius:8px;
-  font-size:0.68rem;font-weight:700;text-align:center;
-  line-height:1.3;
-  margin-top:14px;
+.mt-item:hover .mt-content {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 152, 0, 0.4);
+  box-shadow: 0 15px 40px rgba(255, 152, 0, 0.15);
 }
-.sched-label.orange{background:var(--orange);}
-.sched-label.teal{background:#00897B;}
-.sched-label.red{background:#E53935;}
-.sched-label.blue{background:#1E88E5;}
-.sched-label.purple{background:#8E24AA;}
-.sched-time{
-  color:rgba(255,255,255,0.75);
-  font-size:0.68rem;font-weight:700;
-  background:rgba(0,0,0,0.35);
-  padding:2px 8px;border-radius:20px;
+.mt-time {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--orange);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(255, 152, 0, 0.15);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 0.8rem;
 }
-/* check-in / checkout pins */
-.sched-ends{
-  display:flex;justify-content:space-between;
-  max-width:1000px;margin:1rem auto 0;
-  color:rgba(255,255,255,0.8);font-size:0.8rem;font-weight:600;
+.mt-title {
+  color: #fff;
+  font-size: 1.25rem;
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
-.sched-ends span{display:flex;align-items:center;gap:6px;}
-.sched-ends .pin{
-  width:28px;height:28px;background:#E53935;border-radius:50% 50% 50% 0;
-  transform:rotate(-45deg);display:inline-flex;align-items:center;
-  justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.3);
+.mt-desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
-.sched-ends .pin i{transform:rotate(45deg);color:#fff;font-size:0.7rem;}
+.mt-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--green-dark);
+  border: 3px solid #142d14;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.1rem;
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(46, 139, 87, 0.6);
+  transition: all 0.4s;
+}
+.mt-item:hover .mt-icon {
+  background: var(--orange);
+  border-color: rgba(255, 152, 0, 0.3);
+  color: #fff;
+  box-shadow: 0 0 25px rgba(244, 160, 37, 0.7);
+  transform: translateX(-50%) scale(1.15);
+}
+@media (max-width: 768px) {
+  .modern-timeline::before { left: 24px; }
+  .mt-item, .mt-item:nth-child(even) {
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 1.5rem;
+  }
+  .mt-content { width: calc(100% - 64px); padding: 1.5rem; }
+  .mt-icon { left: 24px; }
+}
 
 /* ===== STATS ===== */
 .stats-bar{
@@ -788,10 +830,10 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
     <li class="dropdown">
       <a href="services.html" id="nav-services">Our Services ▾</a>
       <div class="dropdown-menu">
-        <a href="services.html">Tent Camping</a>
-        <a href="services.html">Standard Triangle</a>
-        <a href="services.html">Cabin Cottage</a>
-        <a href="services.html">Cozy Cottage</a>
+        <a href="services.html#tent-camping-detail"><span>🏕️</span> Tent Camping</a>
+        <a href="services.html#standard-triangle-detail"><span>🔺</span> Standard Triangle</a>
+        <a href="services.html#cabin-cottage-detail"><span>🏠</span> Cabin Cottage</a>
+        <a href="services.html#cozy-cottage-detail"><span>🛖</span> Cozy Cottage</a>
       </div>
     </li>
     <li><a href="gallery.html" id="nav-gallery">Gallery</a></li>
@@ -807,7 +849,12 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 <section id="hero" class="hero">
   <div class="hero-content">
     <div class="hero-eyebrow"><i class="fa-solid fa-location-dot"></i> Pawna Dam &nbsp;&middot;&nbsp; Near Lonavala</div>
-    <h1>Experience<br><span>Lakeside Magic</span><br>at Sahyadri Camp<br><em>Camping</em></h1>
+    <h1 style="font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 1.2rem; text-transform: none;">
+      Experience<br>
+      <span style="color: transparent; -webkit-text-stroke: 1.5px #fff; opacity: 0.9;">Lakeside</span> 
+      <span style="color:#FF9800; font-style: italic;">Magic</span><br>
+      <span style="font-size: 0.6em; font-weight: 600;">at Sahyadri Camp</span>
+    </h1>
     <p>Thrilling water slides, wave pools, lazy rivers & non-stop fun for the whole family. The ultimate waterpark experience near Lonavala, Pune & Mumbai.</p>
     <div class="hero-btns">
       <a href="#booking" class="btn-orange"><i class="fa-solid fa-ticket"></i> Book Now</a>
@@ -911,7 +958,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 
     <div class="svc-card2">
       <div class="svc-img2">
-        <img src="https://images.unsplash.com/photo-1613559806989-09f3be78e3dd?w=700&q=80" alt="Cabin Cottage">
+        <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=700&q=80" alt="Family Pack Lakeside Tent">
       </div>
       <div class="svc-body2">
         <h3>Family Pack</h3>
@@ -940,76 +987,79 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 <div class="schedule-bg">
   <div style="text-align:center;">
     <h2 class="schedule-title-main">Sahyadri Camp</h2>
-    <span class="schedule-title-sub">Schedule</span>
+    <span class="schedule-title-sub">Camping Itinerary</span>
   </div>
 
-  <div class="schedule-timeline">
-    <!-- TOP ROW -->
-    <div class="sched-track">
-      <div class="sched-item">
-        <div class="sched-icon"><img src="https://img.icons8.com/color/96/camping-tent.png" alt="Tent"></div>
-        <div class="sched-label">Grab Tents</div>
-        <div class="sched-time">4 pm</div>
+  <div class="modern-timeline">
+    <div class="mt-item">
+      <div class="mt-icon"><i class="fa-solid fa-location-dot"></i></div>
+      <div class="mt-content">
+        <div class="mt-time">04:00 PM</div>
+        <div class="mt-title">Check-in & Tent Allocation</div>
+        <div class="mt-desc">Arrive at Sahyadri Camp, receive a warm welcome, and settle into your cozy lakeside tent.</div>
       </div>
-      <div class="sched-item">
-        <div class="sched-icon"><img src="https://img.icons8.com/color/96/sunset.png" alt="Sunset"></div>
-        <div class="sched-label orange">Enjoy Sunset</div>
-        <div class="sched-time">6:30 pm</div>
-      </div>
-      <div class="sched-item">
-        <div class="sched-icon"><img src="https://img.icons8.com/color/96/chicken.png" alt="Food"></div>
-        <div class="sched-label teal">Chikan Chilli & Paneer Chilli</div>
-        <div class="sched-time">8:00 pm</div>
-      </div>
-      <div class="sched-item">
-        <div class="sched-icon"><img src="https://img.icons8.com/color/96/dining-room.png" alt="Dinner"></div>
-        <div class="sched-label">Unlimited Dinner</div>
-        <div class="sched-time">9:30 to 11 pm</div>
-      </div>
-      <div class="sched-item">
-        <div class="sched-icon"><img src="https://img.icons8.com/color/96/sleeping-in-bed.png" alt="Sleep"></div>
-        <div class="sched-label blue">Sleep in Tent</div>
-        <div class="sched-time">• • •</div>
-      </div>
-      <div class="sched-item">
-        <div class="sched-icon"><img src="https://img.icons8.com/color/96/camera.png" alt="Camera"></div>
-        <div class="sched-label purple">Photo Session</div>
-        <div class="sched-time">9 am</div>
+    </div>
+    
+    <div class="mt-item">
+      <div class="mt-icon"><i class="fa-solid fa-mug-hot"></i></div>
+      <div class="mt-content">
+        <div class="mt-time">05:00 PM - 06:00 PM</div>
+        <div class="mt-title">High Tea & Snacks</div>
+        <div class="mt-desc">Enjoy hot tea and delicious freshly-made Pakodas while immersing in the evening breeze.</div>
       </div>
     </div>
 
-    <!-- Check-in / Checkout -->
-    <div class="sched-ends">
-      <span><i class="fa-solid fa-location-dot" style="color:#E53935;"></i> Check-in: 4PM</span>
-      <span><i class="fa-solid fa-location-dot" style="color:#E53935;"></i> Checkout: 11PM</span>
+    <div class="mt-item">
+      <div class="mt-icon"><i class="fa-solid fa-volleyball"></i></div>
+      <div class="mt-content">
+        <div class="mt-time">06:00 PM - 07:30 PM</div>
+        <div class="mt-title">Sports & Sunset View</div>
+        <div class="mt-desc">Play outdoor sports like cricket, dart, archery, or relax by the lake to watch a magical sunset.</div>
+      </div>
     </div>
 
-    <!-- BOTTOM ROW -->
-    <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:2rem;">
-      <div class="sched-item">
-        <div class="sched-icon"><img src="https://img.icons8.com/color/96/tea.png" alt="Snacks"></div>
-        <div class="sched-label orange">Snacks</div>
-        <div class="sched-time">5–6 pm</div>
+    <div class="mt-item">
+      <div class="mt-icon"><i class="fa-solid fa-music"></i></div>
+      <div class="mt-content">
+        <div class="mt-time">07:30 PM - 09:00 PM</div>
+        <div class="mt-title">DJ Night & Starters</div>
+        <div class="mt-desc">Groove to the DJ beats and enjoy unbounded, mouth-watering Chicken/Paneer Chilli starters.</div>
       </div>
-      <div class="sched-item">
-        <div class="sched-icon"><img src="https://img.icons8.com/color/96/sports.png" alt="Sports"></div>
-        <div class="sched-label teal">Sports Activities</div>
-        <div class="sched-time">• • •</div>
+    </div>
+
+    <div class="mt-item">
+      <div class="mt-icon"><i class="fa-solid fa-utensils"></i></div>
+      <div class="mt-content">
+        <div class="mt-time">09:30 PM - 11:00 PM</div>
+        <div class="mt-title">Unlimited Dinner</div>
+        <div class="mt-desc">Savor an authentic, filling buffet dinner featuring both veg and non-veg local specialties.</div>
       </div>
-      <div class="sched-item">
-        <div class="sched-icon"><img src="https://img.icons8.com/color/96/dj.png" alt="Music"></div>
-        <div class="sched-label purple">Music</div>
-        <div class="sched-time">6–10 pm</div>
+    </div>
+
+    <div class="mt-item">
+      <div class="mt-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+      <div class="mt-content">
+        <div class="mt-time">11:00 PM Onwards</div>
+        <div class="mt-title">Campfire & Stargazing</div>
+        <div class="mt-desc">Cozy up around the warmth of the campfire with acoustic sounds and gaze at the starry night sky.</div>
       </div>
-      <div class="sched-item">
-        <div class="sched-icon"><img src="https://img.icons8.com/color/96/fire-element.png" alt="Campfire"></div>
-        <div class="sched-label red">Warmy Campfire</div>
-        <div class="sched-time">10:30 pm</div>
+    </div>
+
+    <div class="mt-item">
+      <div class="mt-icon"><i class="fa-solid fa-sun"></i></div>
+      <div class="mt-content">
+        <div class="mt-time">08:30 AM</div>
+        <div class="mt-title">Morning Breakfast</div>
+        <div class="mt-desc">Wake up to a stunning sunrise! Enjoy freshly brewed tea or coffee along with local delicious Poha.</div>
       </div>
-      <div class="sched-item">
-        <div class="sched-icon"><img src="https://img.icons8.com/color/96/breakfast.png" alt="Breakfast"></div>
-        <div class="sched-label">Breakfast</div>
-        <div class="sched-time">8:30 am</div>
+    </div>
+
+    <div class="mt-item">
+      <div class="mt-icon"><i class="fa-solid fa-camera"></i></div>
+      <div class="mt-content">
+        <div class="mt-time">09:00 AM - 11:00 AM</div>
+        <div class="mt-title">Relaxation & Check-out</div>
+        <div class="mt-desc">Capture beautiful lakeside photos, relax with nature, and pack up your unforgettable memories.</div>
       </div>
     </div>
   </div>
@@ -1306,7 +1356,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   </div>
   <div class="footer-bottom">
     <span>© 2025, All Rights Reserved. Sahyadri Camp.</span>
-    <span>Made with <i class="fa-solid fa-leaf"></i> for nature lovers</span>
+    <span>Made with <i class="fa-solid fa-leaf"></i> by Webcultivate</span>
   </div>
 </footer>
 
@@ -1370,7 +1420,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
       <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="#" onclick="showPage('services')">Tent Camping</a></li><li><a href="#" onclick="showPage('services')">Standard Triangle</a></li><li><a href="#" onclick="showPage('services')">Cabin Cottage</a></li><li><a href="#" onclick="showPage('services')">Cozy Cottage</a></li></ul></div>
       <div class="footer-col"><h4>Get in Touch</h4><ul><li><a href="#"><i class="fa-solid fa-location-dot"></i> Pawna Dam, Thakursai, MH 410406</a></li><li><a href="mailto:minalavangare2498@gmail.com"><i class="fa-solid fa-envelope"></i> minalavangare2498@gmail.com</a></li><li><a href="tel:+918381056352"><i class="fa-solid fa-phone"></i> +91 83810 56352</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2025 All Rights Reserved. Sahyadri Camp.</span><span>Made with <i class="fa-solid fa-leaf"></i> for nature lovers</span></div>
+    <div class="footer-bottom"><span>© 2025 All Rights Reserved. Sahyadri Camp.</span><span>Made with <i class="fa-solid fa-leaf"></i> by Webcultivate</span></div>
   </footer>
 </div><!-- end about -->
 
@@ -1406,7 +1456,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
       <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="#" onclick="showPage('services')">Tent Camping</a></li><li><a href="#" onclick="showPage('services')">Standard Triangle</a></li><li><a href="#" onclick="showPage('services')">Cabin Cottage</a></li><li><a href="#" onclick="showPage('services')">Cozy Cottage</a></li></ul></div>
       <div class="footer-col"><h4>Get in Touch</h4><ul><li><a href="#"><i class="fa-solid fa-location-dot"></i> Pawna Dam, Thakursai, MH 410406</a></li><li><a href="mailto:minalavangare2498@gmail.com"><i class="fa-solid fa-envelope"></i> minalavangare2498@gmail.com</a></li><li><a href="tel:+918381056352"><i class="fa-solid fa-phone"></i> +91 83810 56352</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2025 All Rights Reserved. Sahyadri Camp.</span><span>Made with <i class="fa-solid fa-leaf"></i> for nature lovers</span></div>
+    <div class="footer-bottom"><span>© 2025 All Rights Reserved. Sahyadri Camp.</span><span>Made with <i class="fa-solid fa-leaf"></i> by Webcultivate</span></div>
   </footer>
 </div><!-- end services -->
 
@@ -1446,7 +1496,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
       <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="#" onclick="showPage('services')">Tent Camping</a></li><li><a href="#" onclick="showPage('services')">Standard Triangle</a></li><li><a href="#" onclick="showPage('services')">Cabin Cottage</a></li><li><a href="#" onclick="showPage('services')">Cozy Cottage</a></li></ul></div>
       <div class="footer-col"><h4>Get in Touch</h4><ul><li><a href="#"><i class="fa-solid fa-location-dot"></i> Pawna Dam, Thakursai, MH 410406</a></li><li><a href="mailto:minalavangare2498@gmail.com"><i class="fa-solid fa-envelope"></i> minalavangare2498@gmail.com</a></li><li><a href="tel:+918381056352"><i class="fa-solid fa-phone"></i> +91 83810 56352</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2025 All Rights Reserved. Sahyadri Camp.</span><span>Made with <i class="fa-solid fa-leaf"></i> for nature lovers</span></div>
+    <div class="footer-bottom"><span>© 2025 All Rights Reserved. Sahyadri Camp.</span><span>Made with <i class="fa-solid fa-leaf"></i> by Webcultivate</span></div>
   </footer>
 </div><!-- end gallery -->
 
@@ -1499,32 +1549,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
       </div>
     </div>
   </section>
-      <div class="cf-card">
-        <h2>Send Us a Message</h2>
-        <p>Fill in your details and we’ll get back to you on WhatsApp within minutes!</p>
-        <div class="cf-row">
-          <div class="cf-group"><label>Full Name</label><input type="text" placeholder="e.g. Rahul Sharma"></div>
-          <div class="cf-group"><label>Phone Number</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div>
-        </div>
-        <div class="cf-row">
-          <div class="cf-group"><label>Check-in Date</label><input type="date"></div>
-          <div class="cf-group"><label>Package</label><select><option value="">Select Package</option><option>Tent Camping – ₹999</option><option>Standard Triangle – ₹1499</option><option>Cabin Cottage – ₹1699</option><option>Cozy Cottage – ₹2499</option></select></div>
-        </div>
-        <div class="cf-group"><label>No. of People</label><input type="number" placeholder="e.g. 4" min="1"></div>
-        <div class="cf-group"><label>Message (Optional)</label><textarea rows="3" placeholder="Any special requests..."></textarea></div>
-        <button class="btn-cf" onclick="sendContact()"><i class="fa-brands fa-whatsapp"></i> Send via WhatsApp</button>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:1.5rem;">
-        <div class="ci-card"><div class="ci-icon-box"><i class="fa-solid fa-location-dot"></i></div><div><div class="ci-label">Location</div><div class="ci-value">Pawna Dam, Gevhande Khadak, Thakursai, Maharashtra 410406</div></div></div>
-        <div class="ci-card"><div class="ci-icon-box"><i class="fa-solid fa-phone"></i></div><div><div class="ci-label">Phone / WhatsApp</div><div class="ci-value"><a href="tel:+918381056352">+91 83810 56352</a></div></div></div>
-        <div class="ci-card"><div class="ci-icon-box"><i class="fa-solid fa-envelope"></i></div><div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:minalavangare2498@gmail.com">minalavangare2498@gmail.com</a></div></div></div>
-        <div style="background:var(--green-dark);border-radius:var(--radius);padding:1.5rem;color:white;">
-          <div style="font-size:0.75rem;font-weight:800;letter-spacing:0.15em;text-transform:uppercase;color:#FFE082;margin-bottom:0.75rem;">Timings</div>
-          <div style="font-size:0.92rem;line-height:2;">Check-in: <strong>4:00 PM</strong><br>Check-out: <strong>11:00 AM</strong><br>Support: <strong>24/7 Available</strong></div>
-        </div>
-      </div>
-    </div>
-  </section>
+
   <footer>
     <div class="footer-grid">
       <div class="footer-brand"><span class="footer-logo-txt">Sahyadri Camp</span><p>Enjoy the best Sahyadri Camp near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities.</p><div class="footer-socials"><a href="#" class="footer-social">f</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">▶</a></div></div>
@@ -1532,7 +1557,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
       <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="#" onclick="showPage('services')">Tent Camping</a></li><li><a href="#" onclick="showPage('services')">Standard Triangle</a></li><li><a href="#" onclick="showPage('services')">Cabin Cottage</a></li><li><a href="#" onclick="showPage('services')">Cozy Cottage</a></li></ul></div>
       <div class="footer-col"><h4>Get in Touch</h4><ul><li><a href="#"><i class="fa-solid fa-location-dot"></i> Pawna Dam, Thakursai, MH 410406</a></li><li><a href="mailto:minalavangare2498@gmail.com"><i class="fa-solid fa-envelope"></i> minalavangare2498@gmail.com</a></li><li><a href="tel:+918381056352"><i class="fa-solid fa-phone"></i> +91 83810 56352</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2025 All Rights Reserved. Sahyadri Camp.</span><span>Made with <i class="fa-solid fa-leaf"></i> for nature lovers</span></div>
+    <div class="footer-bottom"><span>© 2025 All Rights Reserved. Sahyadri Camp.</span><span>Made with <i class="fa-solid fa-leaf"></i> by Webcultivate</span></div>
   </footer>
 </div><!-- end contact -->
 
