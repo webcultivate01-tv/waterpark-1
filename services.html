@@ -12,7 +12,7 @@
 
 <nav>
   <div class="nav-logo">
-    <div class="nav-logo-icon">PL</div>
+    <div class="nav-logo-icon">SC</div>
     <div class="nav-logo-text">
       <div class="nav-logo-title">Sahyadri Camp</div>
       <div class="nav-logo-sub">Near Lonavala</div>
@@ -24,10 +24,10 @@
     <li class="dropdown">
       <a href="services.html" class="active">Our Services ▾</a>
       <div class="dropdown-menu">
-        <a href="services.html#tent-camping">Tent Camping</a>
-        <a href="services.html#standard-triangle">Standard Triangle</a>
-        <a href="services.html#cabin-cottage">Cabin Cottage</a>
-        <a href="services.html#cozy-cottage">Cozy Cottage</a>
+        <a href="services.html" onclick="sessionStorage.setItem('scrollTo','tent-camping')"><span>🏕️</span> Tent Camping</a>
+        <a href="services.html" onclick="sessionStorage.setItem('scrollTo','standard-triangle')"><span>🔺</span> Standard Triangle</a>
+        <a href="services.html" onclick="sessionStorage.setItem('scrollTo','cabin-cottage')"><span>🏠</span> Cabin Cottage</a>
+        <a href="services.html" onclick="sessionStorage.setItem('scrollTo','cozy-cottage')"><span>🛖</span> Cozy Cottage</a>
       </div>
     </li>
     <li><a href="gallery.html">Gallery</a></li>
@@ -37,109 +37,94 @@
 </nav>
 
 <!-- HERO -->
-<div class="page-hero" style="background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),url('https://images.unsplash.com/photo-1601918774946-25832a4be0d6?w=1400&q=80') center/cover no-repeat;">
-  <div style="position:relative;z-index:2;max-width:700px;">
+<div class="page-hero" style="background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.45)),url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1600&q=80') center/cover no-repeat;">
+  <div style="position:relative;z-index:2;max-width:700px;text-align:center;margin:0 auto;">
     <div class="hero-eyebrow"><i class="fa-solid fa-star"></i> Starting from ₹999 per person</div>
-    <h1 style="font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 1.2rem; text-transform: none;">
-      Choose Your<br>
-      <span style="color: transparent; -webkit-text-stroke: 1.5px #fff; opacity: 0.9;">Perfect</span> 
-      <span style="color:#FF9800; font-style: italic;">Stay</span>
-    </h1>
-    <p>Tent, Triangle, Cabin or Cottage — every package includes meals, bonfire, DJ music, sports & breathtaking lake views.</p>
-    <div class="hero-btns">
+    <h1>Our <span style="color:#FF9800;">Packages</span></h1>
+    <p>Choose your perfect stay — all packages include meals, bonfire, DJ music & activities.</p>
+    <div class="hero-btns" style="justify-content:center;">
       <a href="index.html#booking" class="btn-orange"><i class="fa-solid fa-calendar-check"></i> Book Now</a>
-      <a href="contact.html" class="btn-outline-white"><i class="fa-solid fa-phone"></i> Call Us</a>
     </div>
   </div>
-  <div style="position:absolute;bottom:0;left:0;width:100%;z-index:3;line-height:0;pointer-events:none;">
-    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;"><path d="M0 43.9999C106.667 43.9999 213.333 7.99994 320 7.99994C426.667 7.99994 533.333 43.9999 640 43.9999C746.667 43.9999 853.333 7.99994 960 7.99994C1066.67 7.99994 1173.33 43.9999 1280 43.9999C1386.67 43.9999 1440 19.0266 1440 9.01329V100H0V43.9999Z" fill="#edf7ef"/></svg>
+  <div style="position:absolute;bottom:0;left:0;width:100%;z-index:3;line-height:0;">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:80px;">
+      <path d="M0 43.9999C106.667 43.9999 213.333 7.99994 320 7.99994C426.667 7.99994 533.333 43.9999 640 43.9999C746.667 43.9999 853.333 7.99994 960 7.99994C1066.67 7.99994 1173.33 43.9999 1280 43.9999C1386.67 43.9999 1440 19.0266 1440 9.01329V100H0V43.9999Z" fill="#f8fdf8"/>
+    </svg>
   </div>
 </div>
 
-<!-- SERVICES -->
-<section class="services-section">
-  <div style="text-align:center;"><div class="section-tag">Our Packages</div><h2 class="section-title">Delivering World-Class Services</h2></div>
-  <div class="services-grid">
-    <div class="svc-card2" id="tent-camping"><div class="svc-img2"><img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=700&q=80" alt="Tent"></div><div class="svc-body2"><h3>🏕️ Tent Camping</h3><p>Tent stay, Food, Starters, Activities, Lake view, Speaker, Garden.</p><div class="svc-price2"><span class="svc-rupee">₹</span><span class="svc-amt2">999/-</span><span class="svc-per2">Per person with food</span></div><a href="index.html#booking" class="btn-svc2"><i class="fa-solid fa-calendar-check"></i> BOOK NOW</a></div></div>
-    <div class="svc-card2" id="standard-triangle"><div class="svc-img2"><img src="https://images.unsplash.com/photo-1478827387698-1527781a4887?w=700&q=80" alt="Triangle"></div><div class="svc-body2"><h3>🔺 Standard Triangle</h3><p>Stay, Food, Starters, Activities, Fan, Charging, Garden view, Common Toilets.</p><div class="svc-price2"><span class="svc-rupee">₹</span><span class="svc-amt2">1499/-</span><span class="svc-per2">Per person with food</span></div><a href="index.html#booking" class="btn-svc2"><i class="fa-solid fa-calendar-check"></i> BOOK NOW</a></div></div>
-    <div class="svc-card2" id="cabin-cottage"><div class="svc-img2"><img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=700&q=80" alt="Cabin"></div><div class="svc-body2"><h3>🏠 Cabin Cottage</h3><p>Mattress, Fan, Food, Starters, Activities, Lakeview, Speaker, Charging, Garden.</p><div class="svc-price2"><span class="svc-rupee">₹</span><span class="svc-amt2">1699/-</span><span class="svc-per2">Per person with food</span></div><a href="index.html#booking" class="btn-svc2"><i class="fa-solid fa-calendar-check"></i> BOOK NOW</a></div></div>
-    <div class="svc-card2" id="cozy-cottage"><div class="svc-img2"><img src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?w=700&q=80" alt="Cozy"></div><div class="svc-body2"><h3>🛖 Cozy Cottage</h3><p>Attached Washroom, Food, Starters, Activities, Lakeview, Speaker, Garden.</p><div class="svc-price2"><span class="svc-rupee">₹</span><span class="svc-amt2">2499/-</span><span class="svc-per2">Per person with food</span></div><a href="index.html#booking" class="btn-svc2"><i class="fa-solid fa-calendar-check"></i> BOOK NOW</a></div></div>
-  </div>
-</section>
+<!-- ALL SERVICES -->
+<section style="padding:4rem 4%;background:#f8fdf8;">
+  <div style="max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:5rem;">
 
-<!-- DETAILED INFO SECTIONS -->
-<section style="padding:3rem 4%;background:#f8fdf8;">
-
-  <div style="max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:4rem;">
-
-    <!-- Tent Camping Detail -->
-    <div id="tent-camping-detail" style="scroll-margin-top:90px;" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;scroll-margin-top:80px;">
-      <img src="https://images.unsplash.com/photo-1537225228614-56cc3556d7ed?w=700&q=80" alt="Tent Camping" style="width:100%;border-radius:16px;object-fit:cover;height:300px;">
+    <!-- TENT CAMPING -->
+    <div id="tent-camping" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;scroll-margin-top:90px;">
+      <img src="https://images.unsplash.com/photo-1537225228614-56cc3556d7ed?w=700&q=80" alt="Tent Camping" style="width:100%;border-radius:16px;object-fit:cover;height:320px;">
       <div>
-        <div class="section-tag">₹999 / person</div>
-        <h2 class="section-title" style="text-align:left;">🏕️ Tent Camping</h2>
-        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;">
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> Tent Stay with Lake View</li>
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> All Meals Included (Snacks, Dinner, Breakfast)</li>
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> Bonfire & DJ Music</li>
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> Sports Activities</li>
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> Bluetooth Speaker & Garden</li>
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#FF9800;">✔</span> Common Washroom</li>
+        <span style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#FF9800;display:block;margin-bottom:0.5rem;">₹999 / person</span>
+        <h2 style="font-family:'Merriweather',serif;font-size:1.8rem;color:#1B1B1B;margin-bottom:1rem;">🏕️ Tent Camping</h2>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.5rem;">
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> Tent Stay with Lake View</li>
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> All Meals (Snacks, Dinner, Breakfast)</li>
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> Bonfire & DJ Music</li>
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> Sports Activities</li>
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> Bluetooth Speaker & Garden</li>
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#888;font-weight:800;">✔</span> Common Washroom</li>
         </ul>
-        <a href="index.html#booking" class="btn-svc2" style="display:inline-flex;width:auto;padding:12px 28px;"><i class="fa-solid fa-calendar-check"></i> Book Now – ₹999</a>
+        <a href="index.html#booking" style="display:inline-flex;align-items:center;gap:8px;background:#2E7D32;color:#fff;padding:12px 28px;border-radius:8px;font-weight:800;font-size:0.88rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;transition:background 0.2s;" onmouseover="this.style.background='#FF9800'" onmouseout="this.style.background='#2E7D32'"><i class="fa-solid fa-calendar-check"></i> Book Now – ₹999</a>
       </div>
     </div>
 
-    <!-- Standard Triangle Detail -->
-    <div id="standard-triangle-detail" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;scroll-margin-top:90px;">
+    <!-- STANDARD TRIANGLE -->
+    <div id="standard-triangle" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;scroll-margin-top:90px;">
       <div>
-        <div class="section-tag">₹1499 / person</div>
-        <h2 class="section-title" style="text-align:left;">🔺 Standard Triangle</h2>
-        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;">
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> Triangle Tent with Garden View</li>
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> All Meals Included</li>
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> Fan & Charging Point</li>
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> Bonfire, DJ & Sports</li>
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> Common Toilets</li>
+        <span style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#FF9800;display:block;margin-bottom:0.5rem;">₹1499 / person</span>
+        <h2 style="font-family:'Merriweather',serif;font-size:1.8rem;color:#1B1B1B;margin-bottom:1rem;">🔺 Standard Triangle</h2>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.5rem;">
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> Triangle Tent with Garden View</li>
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> Fan & Charging Point</li>
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> All Meals Included</li>
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> Bonfire, DJ & Sports</li>
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#888;font-weight:800;">✔</span> Common Toilets</li>
         </ul>
-        <a href="index.html#booking" class="btn-svc2" style="display:inline-flex;width:auto;padding:12px 28px;"><i class="fa-solid fa-calendar-check"></i> Book Now – ₹1499</a>
+        <a href="index.html#booking" style="display:inline-flex;align-items:center;gap:8px;background:#2E7D32;color:#fff;padding:12px 28px;border-radius:8px;font-weight:800;font-size:0.88rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;transition:background 0.2s;" onmouseover="this.style.background='#FF9800'" onmouseout="this.style.background='#2E7D32'"><i class="fa-solid fa-calendar-check"></i> Book Now – ₹1499</a>
       </div>
-      <img src="https://images.unsplash.com/photo-1478827387698-1527781a4887?w=700&q=80" alt="Standard Triangle" style="width:100%;border-radius:16px;object-fit:cover;height:300px;">
+      <img src="https://images.unsplash.com/photo-1478827387698-1527781a4887?w=700&q=80" alt="Standard Triangle" style="width:100%;border-radius:16px;object-fit:cover;height:320px;">
     </div>
 
-    <!-- Cabin Cottage Detail -->
-    <div id="cabin-cottage-detail" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;scroll-margin-top:90px;">
-      <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=700&q=80" alt="Cabin Cottage" style="width:100%;border-radius:16px;object-fit:cover;height:300px;">
+    <!-- CABIN COTTAGE -->
+    <div id="cabin-cottage" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;scroll-margin-top:90px;">
+      <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=700&q=80" alt="Cabin Cottage" style="width:100%;border-radius:16px;object-fit:cover;height:320px;">
       <div>
-        <div class="section-tag">₹1699 / person</div>
-        <h2 class="section-title" style="text-align:left;">🏠 Cabin Cottage</h2>
-        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;">
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> Cabin with Mattress & Fan</li>
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> Lake View & Garden</li>
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> All Meals + Starters</li>
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> Bluetooth Speaker & Charging</li>
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> Bonfire, DJ & Sports</li>
+        <span style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#FF9800;display:block;margin-bottom:0.5rem;">₹1699 / person</span>
+        <h2 style="font-family:'Merriweather',serif;font-size:1.8rem;color:#1B1B1B;margin-bottom:1rem;">🏠 Cabin Cottage</h2>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.5rem;">
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> Cabin with Mattress & Fan</li>
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> Lake View & Garden</li>
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> All Meals + Starters</li>
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> Bluetooth Speaker & Charging</li>
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> Bonfire, DJ & Sports</li>
         </ul>
-        <a href="index.html#booking" class="btn-svc2" style="display:inline-flex;width:auto;padding:12px 28px;"><i class="fa-solid fa-calendar-check"></i> Book Now – ₹1699</a>
+        <a href="index.html#booking" style="display:inline-flex;align-items:center;gap:8px;background:#2E7D32;color:#fff;padding:12px 28px;border-radius:8px;font-weight:800;font-size:0.88rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;transition:background 0.2s;" onmouseover="this.style.background='#FF9800'" onmouseout="this.style.background='#2E7D32'"><i class="fa-solid fa-calendar-check"></i> Book Now – ₹1699</a>
       </div>
     </div>
 
-    <!-- Cozy Cottage Detail -->
-    <div id="cozy-cottage-detail" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;scroll-margin-top:90px;">
+    <!-- COZY COTTAGE -->
+    <div id="cozy-cottage" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;scroll-margin-top:90px;">
       <div>
-        <div class="section-tag">₹2499 / person</div>
-        <h2 class="section-title" style="text-align:left;">🛖 Cozy Cottage</h2>
-        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem;">
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> Private Attached Washroom</li>
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> Lake View & Garden</li>
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> All Meals + Starters</li>
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> Bluetooth Speaker</li>
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;">✔</span> Bonfire, DJ & Sports</li>
-          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#FF9800;">✔</span> Premium Experience</li>
+        <span style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#FF9800;display:block;margin-bottom:0.5rem;">₹2499 / person</span>
+        <h2 style="font-family:'Merriweather',serif;font-size:1.8rem;color:#1B1B1B;margin-bottom:1rem;">🛖 Cozy Cottage</h2>
+        <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.5rem;">
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> Private Attached Washroom</li>
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> Lake View & Garden</li>
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> All Meals + Starters</li>
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> Bluetooth Speaker</li>
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#2E7D32;font-weight:800;">✔</span> Bonfire, DJ & Sports</li>
+          <li style="font-size:0.9rem;color:#444;display:flex;gap:8px;"><span style="color:#FF9800;font-weight:800;">★</span> Premium Experience</li>
         </ul>
-        <a href="index.html#booking" class="btn-svc2" style="display:inline-flex;width:auto;padding:12px 28px;"><i class="fa-solid fa-calendar-check"></i> Book Now – ₹2499</a>
+        <a href="index.html#booking" style="display:inline-flex;align-items:center;gap:8px;background:#2E7D32;color:#fff;padding:12px 28px;border-radius:8px;font-weight:800;font-size:0.88rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em;transition:background 0.2s;" onmouseover="this.style.background='#FF9800'" onmouseout="this.style.background='#2E7D32'"><i class="fa-solid fa-calendar-check"></i> Book Now – ₹2499</a>
       </div>
-      <img src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?w=700&q=80" alt="Cozy Cottage" style="width:100%;border-radius:16px;object-fit:cover;height:300px;">
+      <img src="https://images.unsplash.com/photo-1613559806989-09f3be78e3dd?w=700&q=80" alt="Cozy Cottage" style="width:100%;border-radius:16px;object-fit:cover;height:320px;">
     </div>
 
   </div>
@@ -150,10 +135,10 @@
   <div class="footer-grid">
     <div class="footer-brand"><span class="footer-logo-txt">Sahyadri Camp</span><p>Enjoy the best Sahyadri Camp near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities.</p><div class="footer-socials"><a href="#" class="footer-social">f</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">▶</a></div></div>
     <div class="footer-col"><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="tent-camping.html">Tent Camping</a></li><li><a href="standard-triangle.html">Standard Triangle</a></li><li><a href="cabin-cottage.html">Cabin Cottage</a></li><li><a href="cozy-cottage.html">Cozy Cottage</a></li></ul></div>
+    <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="services.html#tent-camping">Tent Camping</a></li><li><a href="services.html#standard-triangle">Standard Triangle</a></li><li><a href="services.html#cabin-cottage">Cabin Cottage</a></li><li><a href="services.html#cozy-cottage">Cozy Cottage</a></li></ul></div>
     <div class="footer-col"><h4>Get in Touch</h4><ul><li><a href="#"><i class="fa-solid fa-location-dot"></i> Pawna Dam, Thakursai, MH 410406</a></li><li><a href="mailto:minalavangare2498@gmail.com"><i class="fa-solid fa-envelope"></i> minalavangare2498@gmail.com</a></li><li><a href="tel:+918381056352"><i class="fa-solid fa-phone"></i> +91 83810 56352</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><span>© 2025 All Rights Reserved. Stay in Pawna Lake.</span><span>Made with <i class="fa-solid fa-leaf"></i> by Webcultivate</span></div>
+  <div class="footer-bottom"><span>© 2025 All Rights Reserved. Sahyadri Camp.</span><span>Made with <i class="fa-solid fa-leaf"></i> for nature lovers</span></div>
 </footer>
 
 <div class="float-btns">
@@ -162,20 +147,21 @@
 </div>
 
 <script>
-const stObs = new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0) scale(1)';}});},{threshold:0.1});
-document.querySelectorAll('.svc-card2').forEach((el,i)=>{el.style.opacity='0';el.style.transform='translateY(30px) scale(0.97)';el.style.transition=`opacity 0.6s ease ${i*0.12}s, transform 0.6s ease ${i*0.12}s`;stObs.observe(el);});
-
-// Scroll to section from URL hash
+// Scroll to section from sessionStorage
 window.addEventListener('load', function(){
-  const hash = window.location.hash;
-  if(hash){
-    setTimeout(()=>{
-      const el = document.querySelector(hash);
-      if(el){ 
+  const target = sessionStorage.getItem('scrollTo') || window.location.hash.replace('#','');
+  sessionStorage.removeItem('scrollTo');
+  if(target){
+    let attempts = 0;
+    const tryScroll = setInterval(()=>{
+      const el = document.getElementById(target);
+      if(el){
+        clearInterval(tryScroll);
         const top = el.getBoundingClientRect().top + window.scrollY - 90;
         window.scrollTo({top: top, behavior:'smooth'});
       }
-    }, 600);
+      if(++attempts > 15) clearInterval(tryScroll);
+    }, 150);
   }
 });
 </script>
