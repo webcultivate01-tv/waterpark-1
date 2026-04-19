@@ -4,27 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sahyadri Camp – Near Lonavala</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Merriweather:ital,wght@0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root {
-  --green-dark: #2E8B57;
-  --green-mid: #3CB371;
-  --green-light: #66BB8A;
-  --green-pale: #d4edda;
-  --bg: #f5fbf6;
-  --bg2: #edf7ef;
-  --orange: #F4A025;
-  --orange-dark: #E08B10;
+  --green-dark: #4CAF50;
+  --green-mid: #43A047;
+  --green-light: #66BB6A;
+  --green-pale: #C8E6C9;
+  --bg: #f9fdf9;
+  --bg2: #f1faf1;
+  --orange: #4CAF50;
+  --orange-dark: #388E3C;
   --text: #1B1B1B;
   --text-muted: #5a6a5a;
   --white: #ffffff;
-  --card-shadow: 0 4px 24px rgba(46,125,50,0.10);
+  --card-shadow: 0 4px 24px rgba(76,175,80,0.10);
   --radius: 14px;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
 
 /* ===== NAVBAR ===== */
 nav{
@@ -41,7 +41,7 @@ nav{
   font-size:1.3rem;color:white;font-weight:900;letter-spacing:-1px;
 }
 .nav-logo-text{line-height:1.1;}
-.nav-logo-title{font-family:'Merriweather',serif;font-size:1rem;color:var(--green-dark);font-weight:700;}
+.nav-logo-title{font-family:'Poppins',sans-serif;font-size:1rem;color:var(--green-dark);font-weight:700;}
 .nav-logo-sub{font-size:0.68rem;color:var(--text-muted);letter-spacing:0.12em;text-transform:uppercase;}
 .nav-links{display:flex;align-items:center;gap:0.25rem;list-style:none;}
 .nav-links a{
@@ -79,7 +79,7 @@ nav{
 /* ===== HERO ===== */
 .hero{
   min-height:100vh;
-  background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+  background:linear-gradient(135deg,rgba(0,0,0,0.72) 0%,rgba(0,30,10,0.55) 60%,rgba(0,0,0,0.35) 100%),
     url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1600&q=80') center/cover no-repeat;
   display:flex;align-items:center;
   padding:110px 6% 180px;
@@ -89,35 +89,39 @@ nav{
 .hero-content{max-width:640px;position:relative;z-index:2;}
 .hero-eyebrow{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.3);
-  color:#FFE082;padding:8px 20px;border-radius:50px;
+  background:rgba(255,213,79,0.18);border:1.5px solid rgba(255,213,79,0.6);
+  color:#4CAF50;padding:8px 20px;border-radius:50px;
   font-size:0.78rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;
   margin-bottom:1.5rem;animation:fadeUp 0.7s ease both;
   backdrop-filter:blur(10px);
+  text-shadow:0 1px 4px rgba(0,0,0,0.4);
 }
 .hero h1{
-  font-family:'Merriweather',serif;
+  font-family:'Poppins',sans-serif;
   font-size:clamp(1.8rem,4vw,3rem);
-  color:white;line-height:1.2;font-weight:700;
+  color:#ffffff;line-height:1.2;font-weight:800;
   margin-bottom:1rem;
   animation:fadeUp 0.7s 0.1s ease both;
   text-transform:uppercase;letter-spacing:0.02em;
+  text-shadow:0 2px 20px rgba(0,0,0,0.7),0 4px 40px rgba(0,0,0,0.5);
 }
-.hero h1 span{color:var(--orange);}
+.hero h1 span{color:#4CAF50;}
 .hero p{
-  color:rgba(255,255,255,0.80);font-size:0.92rem;
-  line-height:1.85;font-weight:400;margin-bottom:2rem;
+  color:rgba(255,255,255,0.95);font-size:0.95rem;
+  line-height:1.85;font-weight:500;margin-bottom:2rem;
   animation:fadeUp 0.7s 0.2s ease both;
   max-width:500px;
+  text-shadow:0 1px 8px rgba(0,0,0,0.6);
 }
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.7s 0.3s ease both;margin-bottom:2.5rem;}
 .btn-orange{
-  background:var(--orange);color:white;
+  background:linear-gradient(135deg,#4CAF50,#388E3C);color:white;
   padding:14px 30px;border-radius:10px;
   font-weight:800;font-size:0.92rem;text-decoration:none;
   letter-spacing:0.05em;text-transform:uppercase;
   transition:all 0.25s;display:inline-flex;align-items:center;gap:8px;
-  box-shadow:0 6px 24px rgba(255,152,0,0.45);
+  box-shadow:0 6px 28px rgba(76,175,80,0.4);
+  text-shadow:0 1px 3px rgba(0,0,0,0.3);
 }
 .btn-orange:hover{background:var(--orange-dark);transform:translateY(-3px);}
 .btn-outline-white{
@@ -132,13 +136,14 @@ nav{
 .hero-badges{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.7s 0.4s ease both;}
 .hero-badge-item{
   display:flex;align-items:center;gap:8px;
-  background:rgba(255,255,255,0.10);
-  border:1px solid rgba(255,255,255,0.2);
+  background:rgba(0,0,0,0.35);
+  border:1px solid rgba(255,213,79,0.35);
   backdrop-filter:blur(8px);
   padding:8px 16px;border-radius:50px;
-  color:rgba(255,255,255,0.9);font-size:0.8rem;font-weight:700;
+  color:#ffffff;font-size:0.8rem;font-weight:700;
+  text-shadow:0 1px 4px rgba(0,0,0,0.5);
 }
-.hero-badge-item i{color:var(--orange);}
+.hero-badge-item i{color:#4CAF50;}
 .hero-float{display:none;}
 @media(max-width:900px){.hero{padding:110px 5% 180px;}}
 
@@ -184,7 +189,7 @@ nav{
   display:block;text-align:center;
 }
 .section-title{
-  font-family:'Merriweather',serif;
+  font-family:'Poppins',sans-serif;
   font-size:clamp(1.6rem,3vw,2.4rem);
   color:var(--text);line-height:1.25;margin-bottom:1rem;
   text-align:center;
@@ -194,8 +199,21 @@ section{padding:5rem 4%;}
 
 /* ===== ABOUT ===== */
 .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1100px;margin:0 auto;}
-.about-img-wrap{position:relative;border-radius:20px;overflow:hidden;}
-.about-img-wrap img{width:100%;height:100%;max-height:420px;object-fit:cover;display:block;}
+/* about image collage */
+.about-img-collage{
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:200px 200px;
+  gap:12px;
+  border-radius:20px;
+  overflow:hidden;
+}
+.about-img-collage img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s;}
+.about-img-collage img:hover{transform:scale(1.05);}
+.about-img-collage .img-main{grid-row:span 2;border-radius:16px 0 0 16px;}
+.about-img-collage .img-top{border-radius:0 16px 0 0;}
+.about-img-collage .img-bottom{border-radius:0 0 16px 0;}
 .about-img-badge{
   position:absolute;bottom:20px;left:20px;
   background:var(--orange);color:white;
@@ -248,7 +266,7 @@ section{padding:5rem 4%;}
   bottom: 0;
   left: 50%;
   width: 2px;
-  background: linear-gradient(to bottom, transparent, rgba(255,152,0,0.5), transparent);
+  background: linear-gradient(to bottom, transparent, rgba(76,175,80,0.4), transparent);
   transform: translateX(-50%);
 }
 .mt-item {
@@ -357,7 +375,7 @@ section{padding:5rem 4%;}
 .stat{padding:1rem;border-right:1px solid var(--green-pale);}
 .stat:last-child{border-right:none;}
 .stat-num{
-  font-family:'Merriweather',serif;font-size:2.4rem;
+  font-family:'Poppins',sans-serif;font-size:2.4rem;
   color:var(--green-dark);display:block;font-weight:700;
 }
 .stat-label{color:var(--text-muted);font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;}
@@ -384,7 +402,7 @@ section{padding:5rem 4%;}
   display:flex;align-items:baseline;gap:4px;
   border-top:1px solid var(--green-pale);padding-top:0.8rem;
 }
-.svc-amount{font-family:'Merriweather',serif;font-size:1.5rem;color:var(--orange);font-weight:700;}
+.svc-amount{font-family:'Poppins',sans-serif;font-size:1.5rem;color:var(--orange);font-weight:700;}
 .svc-per{font-size:0.75rem;color:var(--text-muted);}
 .btn-svc{
   display:flex;align-items:center;justify-content:center;gap:6px;
@@ -438,13 +456,13 @@ section{padding:5rem 4%;}
 .contact-cta{
   background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
     url('https://images.unsplash.com/photo-1467173572719-f14b9fb86e5f?w=1400&q=80') center/cover no-repeat;
-  padding:1.5rem 4% 40px;text-align:center;
+  padding:3rem 4% 160px;text-align:center;
   position:relative;
 }
 .contact-cta .section-tag{color:#FFE082;}
-.contact-cta h2{font-family:'Merriweather',serif;font-size:clamp(1.8rem,3vw,2.6rem);color:white;margin-bottom:1rem;}
+.contact-cta h2{font-family:'Poppins',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);color:white;margin-bottom:1rem;}
 .contact-cta p{color:rgba(255,255,255,0.7);max-width:480px;margin:0 auto 3rem;font-size:0.95rem;line-height:1.7;}
-.contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:900px;margin:0 auto;transform:translateY(55%);position:relative;z-index:10;}
+.contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:900px;margin:0 auto;transform:translateY(100px);position:relative;z-index:10;}
 .contact-card{
   background:white;border-radius:var(--radius);
   padding:2.25rem 1.5rem;text-align:center;
@@ -515,7 +533,7 @@ section{padding:5rem 4%;}
 .review-loc{font-size:0.75rem;color:var(--text-muted);}
 .quote-mark{
   position:absolute;right:1.5rem;bottom:1.25rem;
-  font-size:3rem;color:var(--green-pale);font-family:'Merriweather',serif;line-height:1;
+  font-size:3rem;color:var(--green-pale);font-family:'Poppins',sans-serif;line-height:1;
 }
 
 /* ===== FAQ ===== */
@@ -569,7 +587,7 @@ section{padding:5rem 4%;}
 footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:3rem;margin-bottom:3rem;}
 .footer-brand{}
-.footer-logo-txt{font-family:'Merriweather',serif;font-size:1.4rem;color:var(--green-pale);font-weight:700;display:block;margin-bottom:0.75rem;}
+.footer-logo-txt{font-family:'Poppins',sans-serif;font-size:1.4rem;color:var(--green-pale);font-weight:700;display:block;margin-bottom:0.75rem;}
 .footer-brand p{font-size:0.85rem;color:rgba(255,255,255,0.5);line-height:1.7;font-weight:400;}
 .footer-socials{display:flex;gap:10px;margin-top:1.25rem;}
 .footer-social{
@@ -624,7 +642,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 .page.active{display:block;}
 
 /* ===== PAGE HERO (shared) ===== */
-.page-hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 4% 160px;position:relative;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat;}.page-hero h1{font-family:'Merriweather',serif;font-size:clamp(2.2rem,5vw,3.8rem);color:white;line-height:1.2;font-weight:700;text-transform:uppercase;letter-spacing:0.02em;margin-bottom:1rem;animation:fadeUp 0.7s ease both;}.page-hero p{color:rgba(255,255,255,0.85);font-size:1.05rem;line-height:1.75;font-weight:400;animation:fadeUp 0.7s 0.15s ease both;}
+.page-hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 4% 160px;position:relative;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat;}.page-hero h1{font-family:'Poppins',sans-serif;font-size:clamp(2.2rem,5vw,3.8rem);color:white;line-height:1.2;font-weight:700;text-transform:uppercase;letter-spacing:0.02em;margin-bottom:1rem;animation:fadeUp 0.7s ease both;}.page-hero p{color:rgba(255,255,255,0.85);font-size:1.05rem;line-height:1.75;font-weight:400;animation:fadeUp 0.7s 0.15s ease both;}
 
 /* ===== GALLERY PAGE ===== */
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:1100px;margin:2.5rem auto 0;}
@@ -666,7 +684,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 .contact-info-grid{display:flex;flex-direction:column;gap:1.5rem;margin:0;}
 .contact-info-grid .section-header{margin-bottom:0.5rem;}
 .cf-card{background:white;border-radius:20px;padding:2.5rem;box-shadow:var(--card-shadow);}
-.cf-card h2{font-family:'Merriweather',serif;font-size:1.6rem;color:var(--text);margin-bottom:0.4rem;}
+.cf-card h2{font-family:'Poppins',sans-serif;font-size:1.6rem;color:var(--text);margin-bottom:0.4rem;}
 .cf-card>p{font-size:0.86rem;color:var(--text-muted);margin-bottom:2rem;}
 .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
 .cf-group{margin-bottom:1rem;}
@@ -708,7 +726,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   background:#f9f9f9;
 }
 .services-main-title{
-  font-family:'Merriweather',serif;
+  font-family:'Poppins',sans-serif;
   font-size:clamp(1.6rem,3vw,2.2rem);
   font-weight:700;
   text-align:center;
@@ -806,7 +824,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   transition:background .2s;
   width:100%;
 }
-.btn-svc2:hover{background:#FF9800;}
+.btn-svc2:hover{background:#4CAF50;}
 @media(max-width:700px){
   .services-grid{grid-template-columns:1fr;}
   .svc-img2{height:200px;}
@@ -849,11 +867,11 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 <section id="hero" class="hero">
   <div class="hero-content">
     <div class="hero-eyebrow"><i class="fa-solid fa-location-dot"></i> Pawna Dam &nbsp;&middot;&nbsp; Near Lonavala</div>
-    <h1 style="font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 1.2rem; text-transform: none;">
+    <h1 style="font-family:'Playfair Display',serif; font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 1.15; margin-bottom: 1.2rem; text-transform: none; font-weight:700; text-shadow: 0 3px 24px rgba(0,0,0,0.8), 0 1px 8px rgba(0,0,0,0.9);">
       Experience<br>
-      <span style="color: transparent; -webkit-text-stroke: 1.5px #fff; opacity: 0.9;">Lakeside</span> 
-      <span style="color:#FF9800; font-style: italic;">Magic</span><br>
-      <span style="font-size: 0.6em; font-weight: 600;">at Sahyadri Camp</span>
+      <span style="color: #ffffff; font-weight:900;">Lakeside</span> 
+      <span style="color:#4CAF50; font-style: italic;">Magic</span><br>
+      <span style="font-family:'Poppins',sans-serif; font-size: 0.45em; font-weight: 600; color: rgba(255,255,255,0.90); letter-spacing:0.18em; text-transform:uppercase;">at Sahyadri Camp</span>
     </h1>
     <p>Thrilling water slides, wave pools, lazy rivers & non-stop fun for the whole family. The ultimate waterpark experience near Lonavala, Pune & Mumbai.</p>
     <div class="hero-btns">
@@ -904,9 +922,10 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 <!-- ABOUT -->
 <section id="about">
   <div class="about-wrap">
-    <div class="about-img-wrap">
-      <img src="https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=800&q=80" alt="Sahyadri Camp">
-      <div class="about-img-badge"><i class="fa-solid fa-leaf"></i> Est. 2021</div>
+    <div class="about-img-collage">
+      <img class="img-main" src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80" alt="Camp">
+      <img class="img-top" src="https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=400&q=80" alt="Tents">
+      <img class="img-bottom" src="https://images.unsplash.com/photo-1445308394109-4ec2920981b1?w=400&q=80" alt="Bonfire">
     </div>
     <div class="about-text">
       <div class="section-tag">About Us</div>
@@ -1190,7 +1209,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
 </div>
 
 <!-- FAQ -->
-<section id="faq" class="faq-bg" style="padding-top:5rem;">
+<section id="faq" class="faq-bg" style="padding-top:4rem;">
   <div style="text-align:center;margin-bottom:0.5rem;">
     <p style="font-size:1rem;color:var(--text-muted);font-weight:600;margin-bottom:0.3rem;">Need more help?</p>
     <div class="section-tag">Common Questions</div>
@@ -1367,11 +1386,11 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   <div class="page-hero" style="background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.50)),url('https://images.unsplash.com/photo-1537225228614-56cc3556d7ed?w=1400&q=80') center/cover no-repeat;">
     <div style="position:relative;z-index:2;max-width:700px;">
       <div class="hero-eyebrow"><i class="fa-solid fa-location-dot"></i> Pawna Dam · Near Lonavala</div>
-      <h1>About <span style="color:#FF9800;">Sahyadri Camp</span></h1>
+      <h1>About <span style="color:#4CAF50;">Sahyadri Camp</span></h1>
       <p>Nestled in the Sahyadri hills, we offer the best lakeside camping experience near Lonavala with cozy stays, delicious food, bonfire, and unforgettable memories.</p>
       <div class="hero-btns" style="justify-content:center;">
-        <a href="#" onclick="showPage('services')" class="btn-orange">Our Packages</a>
-        <a href="#" onclick="showPage('contact')" class="btn-outline-white">Contact Us</a>
+        <a href="services.html" class="btn-orange">Our Packages</a>
+        <a href="contact.html" class="btn-outline-white">Contact Us</a>
       </div>
     </div>
     <div style="position:absolute;bottom:0;left:0;width:100%;z-index:3;line-height:0;pointer-events:none;">
@@ -1416,8 +1435,8 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   <footer>
     <div class="footer-grid">
       <div class="footer-brand"><span class="footer-logo-txt">Sahyadri Camp</span><p>Enjoy the best Sahyadri Camp near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities.</p><div class="footer-socials"><a href="#" class="footer-social">f</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">▶</a></div></div>
-      <div class="footer-col"><h4>Company</h4><ul><li><a href="#" onclick="showPage('home')">Home</a></li><li><a href="#" onclick="showPage('about')">About Us</a></li><li><a href="#" onclick="showPage('services')">Services</a></li><li><a href="#" onclick="showPage('gallery')">Gallery</a></li><li><a href="#" onclick="showPage('contact')">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="#" onclick="showPage('services')">Tent Camping</a></li><li><a href="#" onclick="showPage('services')">Standard Triangle</a></li><li><a href="#" onclick="showPage('services')">Cabin Cottage</a></li><li><a href="#" onclick="showPage('services')">Cozy Cottage</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="services.html">Tent Camping</a></li><li><a href="services.html">Standard Triangle</a></li><li><a href="services.html">Cabin Cottage</a></li><li><a href="services.html">Cozy Cottage</a></li></ul></div>
       <div class="footer-col"><h4>Get in Touch</h4><ul><li><a href="#"><i class="fa-solid fa-location-dot"></i> Pawna Dam, Thakursai, MH 410406</a></li><li><a href="mailto:minalavangare2498@gmail.com"><i class="fa-solid fa-envelope"></i> minalavangare2498@gmail.com</a></li><li><a href="tel:+918381056352"><i class="fa-solid fa-phone"></i> +91 83810 56352</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>© 2025 All Rights Reserved. Sahyadri Camp.</span><span>Made with <i class="fa-solid fa-leaf"></i> by Webcultivate</span></div>
@@ -1429,11 +1448,11 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   <div class="page-hero" style="background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.50)),url('https://images.unsplash.com/photo-1478827387698-1527781a4887?w=1400&q=80') center/cover no-repeat;">
     <div style="position:relative;z-index:2;max-width:700px;">
       <div class="hero-eyebrow"><i class="fa-solid fa-campground"></i> Tent · Cottage · Cabin</div>
-      <h1>Our <span style="color:#FF9800;">Services</span> &<br>Packages</h1>
+      <h1>Our <span style="color:#4CAF50;">Services</span> &<br>Packages</h1>
       <p>Choose from our range of comfortable stays — Tent Camping, Standard Triangle, Cabin Cottage, and Cozy Cottage. All inclusive of meals and activities.</p>
       <div class="hero-btns" style="justify-content:center;">
         <a href="#" onclick="showPage('home');setTimeout(()=>document.getElementById('booking').scrollIntoView({behavior:'smooth'}),100)" class="btn-orange"><i class="fa-solid fa-calendar-check"></i> Book Now</a>
-        <a href="#" onclick="showPage('contact')" class="btn-outline-white">Contact Us</a>
+        <a href="contact.html" class="btn-outline-white">Contact Us</a>
       </div>
     </div>
     <div style="position:absolute;bottom:0;left:0;width:100%;z-index:3;line-height:0;pointer-events:none;">
@@ -1452,8 +1471,8 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   <footer>
     <div class="footer-grid">
       <div class="footer-brand"><span class="footer-logo-txt">Sahyadri Camp</span><p>Enjoy the best Sahyadri Camp near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities.</p><div class="footer-socials"><a href="#" class="footer-social">f</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">▶</a></div></div>
-      <div class="footer-col"><h4>Company</h4><ul><li><a href="#" onclick="showPage('home')">Home</a></li><li><a href="#" onclick="showPage('about')">About Us</a></li><li><a href="#" onclick="showPage('services')">Services</a></li><li><a href="#" onclick="showPage('gallery')">Gallery</a></li><li><a href="#" onclick="showPage('contact')">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="#" onclick="showPage('services')">Tent Camping</a></li><li><a href="#" onclick="showPage('services')">Standard Triangle</a></li><li><a href="#" onclick="showPage('services')">Cabin Cottage</a></li><li><a href="#" onclick="showPage('services')">Cozy Cottage</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="services.html">Tent Camping</a></li><li><a href="services.html">Standard Triangle</a></li><li><a href="services.html">Cabin Cottage</a></li><li><a href="services.html">Cozy Cottage</a></li></ul></div>
       <div class="footer-col"><h4>Get in Touch</h4><ul><li><a href="#"><i class="fa-solid fa-location-dot"></i> Pawna Dam, Thakursai, MH 410406</a></li><li><a href="mailto:minalavangare2498@gmail.com"><i class="fa-solid fa-envelope"></i> minalavangare2498@gmail.com</a></li><li><a href="tel:+918381056352"><i class="fa-solid fa-phone"></i> +91 83810 56352</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>© 2025 All Rights Reserved. Sahyadri Camp.</span><span>Made with <i class="fa-solid fa-leaf"></i> by Webcultivate</span></div>
@@ -1465,11 +1484,11 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   <div class="page-hero" style="background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.50)),url('https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?w=1400&q=80') center/cover no-repeat;">
     <div style="position:relative;z-index:2;max-width:700px;">
       <div class="hero-eyebrow"><i class="fa-solid fa-images"></i> Photos · Memories · Moments</div>
-      <h1>Our <span style="color:#FF9800;">Gallery</span></h1>
+      <h1>Our <span style="color:#4CAF50;">Gallery</span></h1>
       <p>Explore beautiful moments captured at Sahyadri Camp — bonfires, sunsets, food, music, and unforgettable memories with loved ones.</p>
       <div class="hero-btns" style="justify-content:center;">
         <a href="#" onclick="showPage('home');setTimeout(()=>document.getElementById('booking').scrollIntoView({behavior:'smooth'}),100)" class="btn-orange"><i class="fa-solid fa-calendar-check"></i> Book Now</a>
-        <a href="#" onclick="showPage('contact')" class="btn-outline-white">Contact Us</a>
+        <a href="contact.html" class="btn-outline-white">Contact Us</a>
       </div>
     </div>
     <div style="position:absolute;bottom:0;left:0;width:100%;z-index:3;line-height:0;pointer-events:none;">
@@ -1492,8 +1511,8 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   <footer>
     <div class="footer-grid">
       <div class="footer-brand"><span class="footer-logo-txt">Sahyadri Camp</span><p>Enjoy the best Sahyadri Camp near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities.</p><div class="footer-socials"><a href="#" class="footer-social">f</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">▶</a></div></div>
-      <div class="footer-col"><h4>Company</h4><ul><li><a href="#" onclick="showPage('home')">Home</a></li><li><a href="#" onclick="showPage('about')">About Us</a></li><li><a href="#" onclick="showPage('services')">Services</a></li><li><a href="#" onclick="showPage('gallery')">Gallery</a></li><li><a href="#" onclick="showPage('contact')">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="#" onclick="showPage('services')">Tent Camping</a></li><li><a href="#" onclick="showPage('services')">Standard Triangle</a></li><li><a href="#" onclick="showPage('services')">Cabin Cottage</a></li><li><a href="#" onclick="showPage('services')">Cozy Cottage</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="services.html">Tent Camping</a></li><li><a href="services.html">Standard Triangle</a></li><li><a href="services.html">Cabin Cottage</a></li><li><a href="services.html">Cozy Cottage</a></li></ul></div>
       <div class="footer-col"><h4>Get in Touch</h4><ul><li><a href="#"><i class="fa-solid fa-location-dot"></i> Pawna Dam, Thakursai, MH 410406</a></li><li><a href="mailto:minalavangare2498@gmail.com"><i class="fa-solid fa-envelope"></i> minalavangare2498@gmail.com</a></li><li><a href="tel:+918381056352"><i class="fa-solid fa-phone"></i> +91 83810 56352</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>© 2025 All Rights Reserved. Sahyadri Camp.</span><span>Made with <i class="fa-solid fa-leaf"></i> by Webcultivate</span></div>
@@ -1505,7 +1524,7 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   <div class="page-hero" style="background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.50)),url('https://images.unsplash.com/photo-1445308394109-4ec2920981b1?w=1400&q=80') center/cover no-repeat;">
     <div style="position:relative;z-index:2;max-width:700px;">
       <div class="hero-eyebrow"><i class="fa-solid fa-phone"></i> WhatsApp · Call · Email</div>
-      <h1>Contact <span style="color:#FF9800;">Us</span></h1>
+      <h1>Contact <span style="color:#4CAF50;">Us</span></h1>
       <p>Get in touch with us for bookings, package inquiries, or any assistance. We respond within minutes on WhatsApp!</p>
       <div class="hero-btns" style="justify-content:center;">
         <a href="https://wa.me/918381056352" class="btn-orange" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
@@ -1518,8 +1537,8 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   </div>
   <section style="padding:4rem 4% 5rem;">
     <div style="width:100%;text-align:center;margin-bottom:3rem;">
-      <span style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#FF9800;display:block;margin-bottom:0.5rem;">Find Us</span>
-      <h2 style="font-family:'Merriweather',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:#1B1B1B;display:block;margin-bottom:0.75rem;">Our Contact Information</h2>
+      <span style="font-size:0.75rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:#4CAF50;display:block;margin-bottom:0.5rem;">Find Us</span>
+      <h2 style="font-family:'Poppins',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);color:#1B1B1B;display:block;margin-bottom:0.75rem;">Our Contact Information</h2>
       <p style="color:#888;font-size:0.95rem;display:block;max-width:480px;margin:0 auto;">Reach out anytime via WhatsApp, call, or email. We respond within minutes!</p>
     </div>
     <div class="contact-form-wrap">
@@ -1553,8 +1572,8 @@ footer{background:#1B2E1B;padding:4rem 4% 1.5rem;}
   <footer>
     <div class="footer-grid">
       <div class="footer-brand"><span class="footer-logo-txt">Sahyadri Camp</span><p>Enjoy the best Sahyadri Camp near Lonavala with cozy stays, tasty food, bonfire, music, and fun activities.</p><div class="footer-socials"><a href="#" class="footer-social">f</a><a href="#" class="footer-social">in</a><a href="#" class="footer-social">▶</a></div></div>
-      <div class="footer-col"><h4>Company</h4><ul><li><a href="#" onclick="showPage('home')">Home</a></li><li><a href="#" onclick="showPage('about')">About Us</a></li><li><a href="#" onclick="showPage('services')">Services</a></li><li><a href="#" onclick="showPage('gallery')">Gallery</a></li><li><a href="#" onclick="showPage('contact')">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="#" onclick="showPage('services')">Tent Camping</a></li><li><a href="#" onclick="showPage('services')">Standard Triangle</a></li><li><a href="#" onclick="showPage('services')">Cabin Cottage</a></li><li><a href="#" onclick="showPage('services')">Cozy Cottage</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Our Packages</h4><ul><li><a href="services.html">Tent Camping</a></li><li><a href="services.html">Standard Triangle</a></li><li><a href="services.html">Cabin Cottage</a></li><li><a href="services.html">Cozy Cottage</a></li></ul></div>
       <div class="footer-col"><h4>Get in Touch</h4><ul><li><a href="#"><i class="fa-solid fa-location-dot"></i> Pawna Dam, Thakursai, MH 410406</a></li><li><a href="mailto:minalavangare2498@gmail.com"><i class="fa-solid fa-envelope"></i> minalavangare2498@gmail.com</a></li><li><a href="tel:+918381056352"><i class="fa-solid fa-phone"></i> +91 83810 56352</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>© 2025 All Rights Reserved. Sahyadri Camp.</span><span>Made with <i class="fa-solid fa-leaf"></i> by Webcultivate</span></div>
